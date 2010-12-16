@@ -19,7 +19,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			
 			<fieldset>
 			
-			<h3>User Management</h3>
+			<h3>Add A New Contact</h3>
 			
 			<label for="firstname"><b><span class="req">*</span>First name:</b>
 			<input id="firstname" name="firstname" type="text" class="f-name" tabindex="1" /><br />
@@ -28,38 +28,41 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			<label for="lastname"><b><span class="req">*</span>Last name:</b>
 			<input id="lastname" name="lastname" type="text" class="f-name" tabindex="2" /><br />
 			</label>
+
+			<label for="phone"><b><span class="req">*</span>Phone Number:</b>
+			<input id="phone" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
+			</label>
 			
-			<label for="emailaddress"><b><span class="req">*</span>Email Address:</b>
+			<label for="emailaddress"><b>Email Address:</b>
 			<input id="emailaddress" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
 			</label>
 			
-			<label for="enquiry"><b>User Role:</b>
-			<select id="enquiry" name="role" tabindex="4">
-			<option>Select...</option>
-			<option>Call Center</option>
-			<option>Team Leader</option>
-			<option>Manager</option>
-			</select>
-			<br />
+			<label for="jobtitle"><b><span class="req">*</span>Job Title:</b>
+			<input id="jobtitle" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
 			</label>
+
+			<label for="schoolcode"><b><span class="req">*</span>School Code<br />(3 Digit):</b>
+			<input id="schoolcode" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
+			</label>
+
+			<label for="altschoolcode"><b>Alt School Code:</b>
+			<input id="altschoolcode" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
+			</label>
+
 			
 			<fieldset class="f-radio-wrap">
 		
-			<b>Country:</b>
+			<b>Lead Counselor?</b>
 			
 				<fieldset>
 				
-				<label for="australia">
-				<input id="australia" type="radio" name="radio" value="Australia" class="f-radio" tabindex="8" />
-				Australia</label>
+				<label for="lead">
+				<input id="yes" type="radio" name="radio" value="Yes" class="f-radio" tabindex="8" />
+				Yes</label>
 				
-				<label for="newzealand">
-				<input id="newzealand" type="radio" name="radio" value="New Zealand" class="f-radio" tabindex="9" />
-				New Zealand</label>
-				
-				<label for="antarctica">
-				<input id="antarctica" type="radio" name="radio" value="Antarctica" class="f-radio" tabindex="10" />
-				Antarctica</label>
+				<label for="no">
+				<input id="no" type="radio" name="radio" value="no" class="f-radio" tabindex="9" />
+				No</label>
 	
 				</fieldset>
 			

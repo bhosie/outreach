@@ -6,7 +6,7 @@
 	session_start();
 	
 	if (!isset($_SESSION['username'])) {
-		header('Location: /outreach/login/');
+	//	header('Location: /outreach/login/');
 	}
 
 //include html header file

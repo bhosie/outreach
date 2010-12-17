@@ -10,14 +10,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 ?>
 
+	<div id="content">
 		
-		<div id="content">
-		
-			<form action="forms.html" method="post" class="f-wrap-1">
+		<form action="../lib/controller.php" method="post" class="f-wrap-1">
 			
-			<div class="req"><b>*</b> Indicates required field</div>
-			
-			<fieldset>
+		<div class="req"><b>*</b> Indicates required field</div>
 			
 			<h3>Outreach Database</h3>
 			
@@ -26,10 +23,14 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			</label>
 			
 			<label for="password"><b><span class="req">*</span>Password:</b>
-			<input id="password" name="password" type="text" class="f-name" tabindex="2" /><br />
+			<input id="password" name="password" type="password" class="f-name" tabindex="2" /><br />
 			</label>
 
+            <input type="submit" name="login" value="Login" class="f-submit" tabindex="3"/>
+            </form>
+
             <br />
+
 <?php
 
 //Include Footer

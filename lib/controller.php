@@ -47,7 +47,7 @@
 	//SEARCH
 	}else if(isset($_POST['search'])){
 
-		echo "SEARCH TERM: {$_POST['username']}<br />";
+		echo "SEARCH TERM: {$_POST['search']}<br />";
 
 	}
 ?>

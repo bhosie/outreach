@@ -1,5 +1,5 @@
 <div id="footer">
-			<p>Insert footer here.</p>
+			<p>Christer was here.</p>
 			<p><a href="#">Contact Us</a> | <a href="#">Privacy</a> | <a href="#">Links</a></p>
 			</div>
 

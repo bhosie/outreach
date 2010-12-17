@@ -41,5 +41,13 @@
 	
 		echo "UserName: {$_POST['username']}<br />";
 		echo "Pass: {$_POST['password']}<br />";
+
+
+
+	//SEARCH
+	}else if(isset($_POST['search'])){
+
+		echo "SEARCH TERM: {$_POST['username']}<br />";
+
 	}
 ?>

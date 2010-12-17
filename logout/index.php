@@ -7,6 +7,10 @@
 
 //include html header file
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/header.html.php');
+
+//include sidebar content
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
+
 ?>
 
 	

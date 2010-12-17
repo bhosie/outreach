@@ -31,7 +31,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		</label>
 
 		<label for="phone"><b><span class="req">*</span>Phone Number:</b>
-		    <input id="phone" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
+		    <input id="phone" name="phone" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 		
 		<label for="emailaddress"><b>Email Address:</b>
@@ -39,15 +39,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		</label>
 		
 		<label for="jobtitle"><b><span class="req">*</span>Job Title:</b>
-		    <input id="jobtitle" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
+		    <input id="jobtitle" name="jobtitle" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 
 		<label for="schoolcode"><b><span class="req">*</span>School Code<br />(3 Digit):</b>
-		    <input id="schoolcode" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
+		    <input id="schoolcode" name="schoolcode" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 
 		<label for="altschoolcode"><b>Alt School Code:</b>
-		    <input id="altschoolcode" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
+		    <input id="altschoolcode" name="altschoolcode" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 			
 	<fieldset class="f-radio-wrap">
@@ -56,11 +56,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			
 		<fieldset>
 			<label for="lead">
-			<input id="lead" type="radio" name="radio" value="yes" class="f-radio" tabindex="8" />
+			<input id="lead" type="radio" name="lead" value="yes" class="f-radio" tabindex="8" />
 			Yes</label>
 			
 			<label for="no">
-			<input id="lead" type="radio" name="radio" value="no" class="f-radio" tabindex="9" />
+			<input id="lead" type="radio" name="lead" value="no" class="f-radio" tabindex="9" />
 			No</label>
 		</fieldset>
 		

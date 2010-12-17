@@ -1,12 +1,50 @@
 <?php
-
+	//EVENT
+	if(isset($_POST['event']){
   	echo "Date: {$_POST['date']}<br />";
     echo "Inquiry: {$_POST['inquiry']}<br />";
     echo "Attended: {$_POST['attendance']}<br /><br />";
 	echo "Contact Type: {$_POST['radio']}<br /><br />";
 	echo "Notes: {$_POST['notes']}<br /><br />";
-    
+  
     var_dump($_POST);
+	
+	//USER
+	}else if(isset($_POST['user']){
+
+		echo "First Name: {$_POST['firstname']}<br />";
+		echo "Last Name: {$_POST['lastname']}<br />";
+		echo "Email: {$_POST['emailaddress']}<br />";
+		echo "User Role: {$_POST['enquiry']}<br />";
+		echo "UserName: {$_POST['username']}<br />";
+		echo "Pass: {$_POST['password']}<br />";
+
+	
+
+
+	//CONTACT
+	}else if(isset($_POST['contact']){
+		
+		echo "Pass: {$_POST['firstname']}<br />";
+		echo "Pass: {$_POST['lastname']}<br />";
+		echo "Pass: {$_POST['phone']}<br />";
+		echo "Pass: {$_POST['emailaddress']}<br />";
+		echo "Pass: {$_POST['jobtitle']}<br />";
+		echo "Pass: {$_POST['schoolcode']}<br />";
+		echo "Pass: {$_POST['altschoolcode']}<br />";
+		echo "Lead: {$_POST['radio']}<br />";
+
+	}
 
 ?>
 
+
+First name:
+*Last name:
+*Phone Number:
+Email Address:
+*Job Title:
+*School Code
+(3 Digit):
+Alt School Code:
+Lead Counselor? Yes No

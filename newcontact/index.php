@@ -65,6 +65,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		</fieldset>
 		
 	</fieldset>
+    <hr/>
 
     <input type="Submit" name="submit" value="Add Contact" class="f-submit" tabindex="10" />
     </form>

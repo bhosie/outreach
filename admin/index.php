@@ -13,7 +13,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		
 		<div id="content">
 		
-			<form action="forms.html" method="post" class="f-wrap-1">
+			<form action="controller.php" method="post" class="f-wrap-1">
 			
 			<div class="req"><b>*</b> Indicates required field</div>
 			
@@ -64,6 +64,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				</fieldset>
 			
 			</fieldset>
+            <hr/>
+            <input type="Submit" name="submit" value="Create User" class="f-submit" tabindex="11" />
+            </form>
 
 <?php
 

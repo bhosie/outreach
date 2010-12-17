@@ -33,7 +33,7 @@
 		echo "Title: {$_POST['jobtitle']}<br />";
 		echo "School: {$_POST['schoolcode']}<br />";
 		echo "Alt School: {$_POST['altschoolcode']}<br />";
-		echo "Lead: {$_POST['radio']}<br />";
+		echo "Lead: {$_POST['lead']}<br />";
 
 	}
 

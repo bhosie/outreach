@@ -23,7 +23,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			</label>
 			
 			<label for="password"><b><span class="req">*</span>Password:</b>
-			<input id="password" name="password" type="text" class="f-name" tabindex="2" /><br />
+			<input id="password" name="password" type="password" class="f-name" tabindex="2" /><br />
 			</label>
 
             <input type="submit" name="login" value="Login" class="f-submit" tabindex="3"/>

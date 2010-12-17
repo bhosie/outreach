@@ -32,14 +32,14 @@ $newContact = ("INSERT INTO contacts(
 				alt_school_code,
 				lead)
 				VALUES(
-				{$_POST['myfield']}
-				{$_POST['myfield']}
-				{$_POST['myfield']}
-				{$_POST['myfield']}
-				{$_POST['myfield']}
-				{$_POST['myfield']}
-				{$_POST['myfield']}
-				{$_POST['myfield']});")
+				{$_POST['firstname']}
+				{$_POST['lastname']}
+				{$_POST['phone']}
+				{$_POST['emailaddress']}
+				{$_POST['jobtitle']}
+				{$_POST['schoolcode']}
+				{$_POST['altschoolcode']}
+				{$_POST['lead']});")
 
 
 			

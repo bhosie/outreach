@@ -19,6 +19,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		<div id="content">
 
         <h1>You are now logged out.</h1> 
+        <br />
+        <br />
 		
 <?php
 

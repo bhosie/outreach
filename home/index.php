@@ -10,14 +10,16 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/header2.html.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 ?>
-		
-		<div id="content">
 
-        <h1>News & Updates</h1>
+	<div id="content">
 
-        <p>Tomorrow is international talk-like-a-pirate day. Arrr!</p>
+    <h1>News & Updates</h1>
+
+    <p>Tomorrow is international talk-like-a-pirate day. Arrr!</p>
 		
-			<hr />
+			<br />
+			<br />
+			<br />
 
 			<?php
 

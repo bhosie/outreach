@@ -68,7 +68,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	</label>
 
     <hr/>
-    <input type="Submit" name="submit" value="Add Event" class="f-submit" tabindex="10" />
+    <input type="submit" name="event" value="Add Event" class="f-submit" tabindex="10" />
     </form>
 
 <?php

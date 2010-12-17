@@ -16,7 +16,7 @@
 		echo "First Name: {$_POST['firstname']}<br />";
 		echo "Last Name: {$_POST['lastname']}<br />";
 		echo "Email: {$_POST['emailaddress']}<br />";
-		echo "User Role: {$_POST['enquiry']}<br />";
+		echo "User Role: {$_POST['role']}<br />";
 		echo "UserName: {$_POST['username']}<br />";
 		echo "Pass: {$_POST['password']}<br />";
 
@@ -38,14 +38,3 @@
 	}
 
 ?>
-
-
-First name:
-*Last name:
-*Phone Number:
-Email Address:
-*Job Title:
-*School Code
-(3 Digit):
-Alt School Code:
-Lead Counselor? Yes No

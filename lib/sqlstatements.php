@@ -15,11 +15,11 @@ $newEvent = ("INSERT INTO details (
 			in_out,
 			notes)
 			VALUES(
-			$_POST['myfield']
-			$_POST['myfield']
-			$_POST['myfield']
-			$_POST['myfield']
-			$_POST['myfield']);")
+			{$_POST['date']}
+			{$_POST['inqury']}
+			{$_POST['attendance']}
+			{$_POST['contact-type']}
+			{$_POST['notes']});")
 
 //Insert New Contact
 $newContact = ("INSERT INTO contacts(
@@ -32,14 +32,14 @@ $newContact = ("INSERT INTO contacts(
 				alt_school_code,
 				lead)
 				VALUES(
-				$_POST['myfield']
-				$_POST['myfield']
-				$_POST['myfield']
-				$_POST['myfield']
-				$_POST['myfield']
-				$_POST['myfield']
-				$_POST['myfield']
-				$_POST['myfield']")
+				{$_POST['myfield']}
+				{$_POST['myfield']}
+				{$_POST['myfield']}
+				{$_POST['myfield']}
+				{$_POST['myfield']}
+				{$_POST['myfield']}
+				{$_POST['myfield']}
+				{$_POST['myfield']});")
 
 
 			

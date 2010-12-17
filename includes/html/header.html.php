@@ -33,7 +33,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 			</form>
 		</div>
 		<ul id="nav">
-		<li><a href="/outreach/login/">Home</a></li>
+		<li><a href="/outreach/home/">Home</a></li>
 		<!--<li class="active"><a href="/submit/">Submit</a></li>   Need to dynamically display active link -->
 		<li><a href="/outreach/event/">Events</a></li>
 		<li><a href="/outreach/newcontact/">New Contact</a></li>

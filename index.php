@@ -1,8 +1,15 @@
 <?php
 //
-//main site index.php
+// Initial index page. 
+// checks for login, redirects accordingly
 //
-//
-echo 'You need an Index Page';
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login/');
+} else {
+    header('Location: home/');
+}    
 
 ?> 

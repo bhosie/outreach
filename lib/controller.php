@@ -25,13 +25,13 @@
 	//CONTACT
 	}else if(isset($_POST['contact']){
 		
-		echo "Pass: {$_POST['firstname']}<br />";
-		echo "Pass: {$_POST['lastname']}<br />";
-		echo "Pass: {$_POST['phone']}<br />";
-		echo "Pass: {$_POST['emailaddress']}<br />";
-		echo "Pass: {$_POST['jobtitle']}<br />";
-		echo "Pass: {$_POST['schoolcode']}<br />";
-		echo "Pass: {$_POST['altschoolcode']}<br />";
+		echo "FirstName: {$_POST['firstname']}<br />";
+		echo "LastName: {$_POST['lastname']}<br />";
+		echo "Phone: {$_POST['phone']}<br />";
+		echo "Email: {$_POST['emailaddress']}<br />";
+		echo "Title: {$_POST['jobtitle']}<br />";
+		echo "School: {$_POST['schoolcode']}<br />";
+		echo "Alt School: {$_POST['altschoolcode']}<br />";
 		echo "Lead: {$_POST['radio']}<br />";
 
 	}

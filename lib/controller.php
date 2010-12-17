@@ -35,6 +35,11 @@
 		echo "Alt School: {$_POST['altschoolcode']}<br />";
 		echo "Lead: {$_POST['lead']}<br />";
 
-	}
 
+	//LOGIN
+	}else if(isset($_POST['login'])){
+	
+		echo "UserName: {$_POST['username']}<br />";
+		echo "Pass: {$_POST['password']}<br />";
+	}
 ?>

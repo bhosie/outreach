@@ -29,7 +29,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 			<form action="">
 			<label for="searchsite">Site Search:</label>
 			<input id="searchsite" name="searchsite" type="text" />
-			<input type="submit" value="Go" class="f-submit" />
+			<input type="submit" name="search" value="Search" class="f-submit" />
 			</form>
 		</div>
 		<ul id="nav">

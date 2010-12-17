@@ -30,7 +30,16 @@ $newContact = ("INSERT INTO contacts(
 				title,
 				school_code,
 				alt_school_code,
-				lead);")
+				lead)
+				VALUES(
+				$_POST['myfield']
+				$_POST['myfield']
+				$_POST['myfield']
+				$_POST['myfield']
+				$_POST['myfield']
+				$_POST['myfield']
+				$_POST['myfield']
+				$_POST['myfield']")
 
 
 			

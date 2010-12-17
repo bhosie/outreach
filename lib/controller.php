@@ -1,6 +1,7 @@
 <?php
 	//EVENT
-	if(isset($_POST['event']){
+	if(isset($_POST['event'])){
+
   	echo "Date: {$_POST['date']}<br />";
     echo "Inquiry: {$_POST['inquiry']}<br />";
     echo "Attended: {$_POST['attendance']}<br /><br />";
@@ -10,7 +11,7 @@
     var_dump($_POST);
 	
 	//USER
-	}else if(isset($_POST['user']){
+	}else if(isset($_POST['user'])){
 
 		echo "First Name: {$_POST['firstname']}<br />";
 		echo "Last Name: {$_POST['lastname']}<br />";
@@ -23,7 +24,7 @@
 
 
 	//CONTACT
-	}else if(isset($_POST['contact']){
+	}else if(isset($_POST['contact'])){
 		
 		echo "FirstName: {$_POST['firstname']}<br />";
 		echo "LastName: {$_POST['lastname']}<br />";

@@ -53,15 +53,14 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 			<fieldset>
 			    <label for="in">
-			    <input id="in" type="radio" name="radio" value="incoming" class="f-radio" tabindex="8" />
+			    <input id="contact-type" type="radio" name="radio" value="incoming" class="f-radio" tabindex="8" />
 			    Incoming</label>
 
 			    <label for="out">
-			    <input id="out" type="radio" name="radio" value="outgoing" class="f-radio" tabindex="9" />
+			    <input id="contact-type" type="radio" name="radio" value="outgoing" class="f-radio" tabindex="9" />
 			    Outgoing</label>
 			</fieldset>
 
-			
 	</fieldset>
 
     <label for="notes"><b><span class="req">*</span>Notes:</b>

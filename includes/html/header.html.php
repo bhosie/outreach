@@ -26,7 +26,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 	<div id="header">
 		<div id="site-name">Utah Higher Education - Outreach</div>
 		<div id="search">
-			<form action="../../lib/controller.php" method="post">
+			<form action="../lib/controller.php" method="post">
 			<label for="searchsite">Site Search:</label>
 			<input id="searchsite" name="search" type="text" />
 			<input type="submit" name="search" value="Search" class="f-submit" />

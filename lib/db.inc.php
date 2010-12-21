@@ -5,8 +5,8 @@
 //
 
 //HELPER files for security
-require($_SERVER['DOCUMENT_ROOT'] . 'htmlout.php');
-require($_SERVER['DOCUMENT_ROOT'] . 'stripslashes.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/htmlout.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/stripslashes.php');
 
 //Set variables to connect to DB
 $username = 'outreach';

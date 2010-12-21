@@ -10,7 +10,7 @@
 	
 	//shortcut to above function, because we're lazy.
 	function htmlout($text){
-		echo html$(text);
+		echo html($text);
 	}
 		
 

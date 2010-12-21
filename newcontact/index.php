@@ -31,7 +31,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		</label>
 
 		<label for="phone"><b><span class="req">*</span>Phone Number:</b>
-		    <input id="phone" name="phone" type="text" class="f-email" tabindex="3" /><br />
+		    <input name="phone" type="text" class="f-email" id="phone" tabindex="3" maxlength="10" /><br />
 		</label>
 		
 		<label for="emailaddress"><b>Email Address:</b>
@@ -43,7 +43,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		</label>
 
 		<label for="schoolcode"><b><span class="req">*</span>School Code<br />(3 Digit):</b>
-		    <input id="schoolcode" name="schoolcode" type="text" class="f-email" tabindex="3" /><br />
+		    <input name="schoolcode" type="text" class="f-email" id="schoolcode" tabindex="3" maxlength="3" /><br />
 		</label>
 
 		<label for="altschoolcode"><b>Alt School Code:</b>

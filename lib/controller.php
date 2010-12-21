@@ -13,7 +13,6 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 	echo "Contact Type: {$_POST['radio']}<br /><br />";
 	echo "Notes: {$_POST['notes']}<br /><br />";
   }
-    //var_dump($_POST);
 		
 	//USER
 	}else if(isset($_POST['user'])){
@@ -61,7 +60,7 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 		else{
 		
 		//header('Location: /outreach/home/');
-		//require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sessions.php');
+
 		echo "UserName: {$_POST['username']}<br />";
 		echo "Pass: {$_POST['password']}<br />";
 		}

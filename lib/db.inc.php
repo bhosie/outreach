@@ -60,7 +60,7 @@ echo 'Table Created! We win!';
 }
 */
 
-mysqli_close($connect);
+//mysqli_close($connect);
 
 
 

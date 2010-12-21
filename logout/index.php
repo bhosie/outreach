@@ -3,8 +3,9 @@
 //logout/index.php
 //
 //
-session_destroy(); //currently displaying error on the page if no session is present. How do we hide this?
-
+if (isset($_SESSION['username'])){
+	session_destroy(); //currently displaying error on the page if no session is present. How do we hide this?
+}
 //include html header file
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/header.html.php');
 

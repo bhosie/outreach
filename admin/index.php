@@ -36,9 +36,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		<label for="enquiry"><b><span class="req">*</span>User Role:</b>
 		<select id="enquiry" name="role" tabindex="4">
 		<option>Select...</option>
-		<option>Call Center</option>
-		<option>Team Leader</option>
+		<option>User</option>
 		<option>Manager</option>
+		<option>Admin</option>
 		</select>
 		<br />
 		</label>

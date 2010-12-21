@@ -35,6 +35,7 @@ $connect = mysqli_connect($hostname, $username, $password, $database);
 */
 
 //Create DB Tables
+/*
 $createDB = "CREATE TABLE school
 (
 id int NOT NULL AUTO_INCREMENT,
@@ -57,6 +58,7 @@ if(!mysqli_query($connect, $createDB)){
 }else{
 echo 'Table Created! We win!';
 }
+*/
 
 mysqli_close($connect);
 

@@ -34,13 +34,18 @@
 		echo "School: {$_POST['schoolcode']}<br />";
 		echo "Alt School: {$_POST['altschoolcode']}<br />";
 		echo "Lead: {$_POST['lead']}<br />";
-
+		
 
 	//LOGIN
 	}else if(isset($_POST['login'])){
-	
+		//header('Location: /outreach/home/');
+		//require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sessions.php');
 		echo "UserName: {$_POST['username']}<br />";
 		echo "Pass: {$_POST['password']}<br />";
+		
+		//Redirect to home
+		//header('Location: /outreach/home/');
+		
 
 
 

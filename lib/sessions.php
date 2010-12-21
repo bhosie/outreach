@@ -3,6 +3,7 @@
 	
 	require_once('db.inc.php');
 	
+
 	$authentication = "SELECT username FROM accounts
 						WHERE username = {$_POST['username']}
 						AND password = md5({$_POST['password']})";
@@ -20,9 +21,9 @@
 	
 	if($rowcount == 1){
 		$_SESSION['username'] = $_POST['username'];
-		header('Location: /submit/');
+		header('Location: /outreach/submit/');
 	}else {
-		header('Location: /login/');
+		header('Location: /outreach/includes/html/error.html.php');
 	}
 
 

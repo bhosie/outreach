@@ -21,7 +21,7 @@
 	
 	if($rowcount == 1){
 		$_SESSION['username'] = $_POST['username'];
-		header('Location: /outreach/submit/');
+		header('Location: /outreach/home/');
 	}else {
 		header('Location: /outreach/includes/html/error.html.php');
 	}

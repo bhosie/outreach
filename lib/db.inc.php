@@ -1,6 +1,14 @@
 <?php 
+//
+//This file is responsible for connecting to the database and include security "Helper" Files
+//
+//
 
+//HELPER files for security
+require($_SERVER['DOCUMENT_ROOT'] . 'htmlout.php');
+require($_SERVER['DOCUMENT_ROOT'] . 'stripslashes.php');
 
+//Set variables to connect to DB
 $username = 'outreach';
 $hostname = 'localhost';
 $password = 'password'; 

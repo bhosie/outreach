@@ -11,7 +11,7 @@
 $getcalls = ("SELECT COUNT(contact_type)
 			FROM details
 			WHERE contact_type = ph
-			AND contact_date LIKE '2010-%';") //Need to fix the date placeholder
+			AND contact_date LIKE '2010-%';"); //Need to fix the date placeholder
 
 /*************************************************************************************
 *************************************************************************************/
@@ -35,7 +35,7 @@ $newEvent = ("INSERT INTO details (
 			{$_POST['inqury']}
 			{$_POST['attendance']}
 			{$_POST['contact-type']}
-			{$_POST['notes']});")
+			{$_POST['notes']});");
 
 //Insert New Contact
 $newContact = ("INSERT INTO contacts(
@@ -55,7 +55,7 @@ $newContact = ("INSERT INTO contacts(
 				{$_POST['jobtitle']}
 				{$_POST['schoolcode']}
 				{$_POST['altschoolcode']}
-				{$_POST['lead']});")
+				{$_POST['lead']});");
 
 //Insert New User
 $newUser = ("INSERT INTO users(
@@ -71,7 +71,7 @@ $newUser = ("INSERT INTO users(
 			{$_POST['emailaddress']}
 			{$_POST['role']}
 			{$_POST['username']}
-			md5({$_POST['password']}));")
+			md5({$_POST['password']}));");
 
 /*************************************************************************************
 *************************************************************************************/

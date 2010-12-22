@@ -1,18 +1,21 @@
 <?php
 	session_start();
 	
-	require_once('db.inc.php');
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 	
 
-	$authentication = "SELECT username FROM details
-						WHERE username = {$_POST['username']}
-						AND password = md5({$_POST['password']})";
+	$authentication = "SELECT username FROM users
+						WHERE username = '{$_POST['username']}'
+						AND password = md5('{$_POST['password']}');";
+
+	echo 'This is $authentication: ' . $authentication;
 						
-	$result = mysqli_query($authentication);
+	$result = mysqli_query($connect, $authentication);
 	
-	if(!$result) {
-		$error = "Query error: " . mysqli_error($result);
-		include 'error.html.php';
+	if(!mysqli_query($connect, $authentication)) {
+		$error = "Query error: " . mysqli_error($connect);
+		
+		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
 		exit();
 		
 	}
@@ -23,7 +26,7 @@
 		$_SESSION['username'] = $_POST['username'];
 		header('Location: /outreach/home/');
 	}else {
-		header('Location: /outreach/includes/html/error.html.php');
+		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
 	}
 
 

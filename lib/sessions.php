@@ -12,7 +12,7 @@
 						
 	$result = mysqli_query($connect, $authentication);
 	
-	if(!mysqli_query($connect, $authentication)) {
+	if(!$result) {
 		$error = "Query error: " . mysqli_error($connect);
 		
 		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');

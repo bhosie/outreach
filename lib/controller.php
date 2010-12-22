@@ -2,11 +2,13 @@
 
 require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sqlstatements.php');
 require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
+	
+
 	//EVENT
 	if(isset($_POST['event'])){
 
 if (empty($_POST['date']) ||  empty($_POST['notes'])){
-		echo "Please enter all the * reqired information";
+		echo "Please enter all the * required information";
 		}
 		else{
 			
@@ -30,30 +32,40 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 	//USER
 	}else if(isset($_POST['user'])){
 		
-		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||  empty($_POST['emailaddress']) ||  empty($_POST['role']) ||  empty($_POST['username']) ||  empty($_POST['password'])){
-		echo "Please enter all the * reqired information";
-		}else{
-		
-		$result = mysqli_query($newUser, $connect);
-			if (!$result){
-			//echo mysqli_error($result);
+		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||
+			empty($_POST['emailaddress']) ||  empty($_POST['role']) ||
+			empty($_POST['username']) ||  empty($_POST['password'])){
+					echo "Please enter all the * required information";
 			}else{
-			
+				$result = mysqli_query($connect, $newUser);
+				echo $newUser; 
+				
+				echo 'You added the following user. YAY!';
 				echo "First Name: {$_POST['firstname']}<br />";
 				echo "Last Name: {$_POST['lastname']}<br />";
 				echo "Email: {$_POST['emailaddress']}<br />";
 				echo "User Role: {$_POST['role']}<br />";
 				echo "UserName: {$_POST['username']}<br />";
 				echo "Pass: {$_POST['password']}<br />";
+					
+
+				if(!$result) {
+					$error = "Query error: " . mysqli_error($connect);
+					echo $error;
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					exit();
+				}
 			}
 		}
 
 
+
+
 	//CONTACT
-	}else if(isset($_POST['contact'])){
+	else if(isset($_POST['contact'])){
 		
 		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||  empty($_POST['phone']) ||  empty($_POST['jobtitle']) ||  empty($_POST['schoolcode'])  ||  !is_numeric($_POST['phone'])){
-		echo "Please enter all the * reqired information";
+		echo "Please enter all the * required information";
 		}
 		
 		else{

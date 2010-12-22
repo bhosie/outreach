@@ -24,7 +24,7 @@ $getcalls = ("SELECT COUNT(contact_type)
 ************************** INSERT FUNCTIONS ***********************************/
 
 //Insert New Event
-$newEvent = ("INSERT INTO details (
+/*$newEvent = ("INSERT INTO details (
 			contact_date,
 			contact_type,
 			num_attend,
@@ -56,7 +56,7 @@ $newContact = ("INSERT INTO contacts(
 				{$_POST['schoolcode']}
 				{$_POST['altschoolcode']}
 				{$_POST['lead']});");
-
+*/
 //Insert New User
 $newUser = ("INSERT INTO users(
 			firstname,
@@ -66,12 +66,13 @@ $newUser = ("INSERT INTO users(
 			username,
 			password)
 			VALUES(
-			{$_POST['firstname']}
-			{$_POST['lastname']}
-			{$_POST['emailaddress']}
-			{$_POST['role']}
-			{$_POST['username']}
-			md5({$_POST['password']}));");
+			'{$_POST['firstname']}',
+			'{$_POST['lastname']}',
+			'{$_POST['emailaddress']}',
+			'{$_POST['role']}',
+			'{$_POST['username']}',
+			md5('{$_POST['password']}'));");
+
 
 /*************************************************************************************
 *************************************************************************************/

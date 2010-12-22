@@ -4,13 +4,13 @@
 	require_once('db.inc.php');
 	
 
-	$authentication = "SELECT username FROM accounts
+	$authentication = "SELECT username FROM details
 						WHERE username = {$_POST['username']}
 						AND password = md5({$_POST['password']})";
 						
 	$result = mysqli_query($authentication);
 	
-	if(!result) {
+	if(!$result) {
 		$error = "Query error: " . mysqli_error($result);
 		include 'error.html.php';
 		exit();

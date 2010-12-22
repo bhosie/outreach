@@ -1,7 +1,7 @@
 <?php
 
 require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sqlstatements.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/db.inc.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 	//EVENT
 	if(isset($_POST['event'])){
 
@@ -34,7 +34,7 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 		echo "Please enter all the * reqired information";
 		}else{
 		
-		$result = mysqli_query($newUser[$connect]);
+		$result = mysqli_query($newUser, $connect);
 			if (!$result){
 			//echo mysqli_error($result);
 			}else{

@@ -212,7 +212,7 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 	
 	else if(isset($_POST['search'])){
 
-		echo "SEARCH TERM: {$_POST['search']}<br />";
+		echo "SEARCH TERM: {$_POST['searchsite']}<br />";
 
 	}
 

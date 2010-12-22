@@ -4,10 +4,10 @@
 //
 
 //Require the header2 file which contains session_start()
-require($_SERVER['DOCUMENT_ROOT'] . 'header2.html.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
 
 //include sidebar content
-include($_SERVER['DOCUMENT_ROOT'] . 'sidebar.html.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 ?>
 
@@ -24,6 +24,6 @@ include($_SERVER['DOCUMENT_ROOT'] . 'sidebar.html.php');
 			<?php
 
 //Include Footer
-include($_SERVER['DOCUMENT_ROOT'] . 'footer.html.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/footer.html.php');
 
 ?>

@@ -73,7 +73,23 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			empty($_POST['emailaddress']) ||  empty($_POST['role']) ||
 			empty($_POST['username']) ||  empty($_POST['password'])){
 					echo "Please enter all the * required information";
-			}else{
+		}else{
+			$checkcontact = "SELECT * FROM users
+									WHERE lastname = '{$_POST['lastname']}'
+									AND firstname = '{$_POST['firstname']}';";
+			
+				$check = mysqli_query($connect, $checkcontact);
+				
+				
+				$rowcount = mysqli_num_rows($check);
+	
+			if($rowcount == 1){
+				$indatabase = ("This person is already in the data base!");
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					exit();
+					
+			}
+				else {
 				$newUser = ("INSERT INTO users(
 					firstname,
 					lastname,
@@ -119,16 +135,16 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			</table>");
 				
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');	
-
+			
 				if(!$result) {
-					$error = "Query error: " . mysqli_error($connect);
+					$result = "Query error: " . mysqli_error($connect);
 					echo $error;
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
 				}
 			}
 		}
-
+	}
 
 
 
@@ -140,9 +156,25 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			empty($_POST['phone']) ||  empty($_POST['jobtitle']) ||
 			empty($_POST['schoolcode'])  ||  !is_numeric($_POST['phone'])){
 				echo "Please enter all the * required information";
-		
-			}else{
-
+	
+	}else{
+			$checkcontact = "SELECT * FROM contacts
+									WHERE lastname = '{$_POST['lastname']}'
+									AND firstname = '{$_POST['firstname']}';";
+			
+				$check = mysqli_query($connect, $checkcontact);
+				
+				
+				$rowcount = mysqli_num_rows($check);
+	
+			if($rowcount == 1){
+				$indatabase = ("This person is already in the data base!");
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					exit();
+					
+			}
+				else {
+					
 				$newContact = ("INSERT INTO contacts(
 						firstname,
 						lastname,
@@ -175,6 +207,10 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				<td>{$_POST['lastname']}</td>
 			  </tr>
 			  <tr>
+				<th scope='row' align='left'>Phone:</th>
+				<td>{$_POST['phone']}</td>
+			  </tr>
+			  <tr>
 				<th scope='row' align='left'>Email:</th>
 				<td>{$_POST['emailaddress']}</td>
 			  </tr>
@@ -197,6 +233,7 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');
 				
+				
 			if(!$result) {
 					$error = "Query error: " . mysqli_error($connect);
 					echo $error;
@@ -205,14 +242,14 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				}
 			}
 		}
-
+	}
 
 	
 	//SEARCH______________________________________________________________________
 	
-	else if(isset($_POST['search'])){
+	else if(isset($_POST['searchsite'])){
 
-		echo "SEARCH TERM: {$_POST['search']}<br />";
+		echo "SEARCH TERM: {$_POST['searchsite']}<br />";
 
 	}
 

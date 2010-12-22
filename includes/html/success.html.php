@@ -9,13 +9,14 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.p
 //include sidebar content
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
+
 ?>
 
 	<div id="content">
 
     <h1>Success</h1>
-
-    <p><?php echo $output ?></p>
+	<h3>You entered the following information:</h3>
+    <p><?php echo $success ?></p>
 		
 			<br />
 			<br />

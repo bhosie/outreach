@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sqlstatements.php');
+//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sqlstatements.php');
 require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 	
 
@@ -11,6 +11,20 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 if (empty($_POST['date']) ||  empty($_POST['notes'])){
 		echo "Please enter all the * required information";
 		}else{
+
+			$newEvent = ("INSERT INTO details (
+					contact_date,
+					contact_type,
+					num_attend,
+					in_out,
+					notes)
+					VALUES(
+					'{$_POST['date']}',
+					'{$_POST['inquiry']}',
+					'{$_POST['attendance']}',
+					'{$_POST['radio']}',
+					'{$_POST['notes']}');");
+
 			$result = mysqli_query($connect, $newEvent);
 			
 			 	
@@ -40,7 +54,21 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			empty($_POST['username']) ||  empty($_POST['password'])){
 					echo "Please enter all the * required information";
 			}else{
-				
+				$newUser = ("INSERT INTO users(
+					firstname,
+					lastname,
+					email,
+					user_role,
+					username,
+					password)
+					VALUES(
+					'{$_POST['firstname']}',
+					'{$_POST['lastname']}',
+					'{$_POST['emailaddress']}',
+					'{$_POST['role']}',
+					'{$_POST['username']}',
+					md5('{$_POST['password']}'));");
+	
 				$result = mysqli_query($connect, $newUser);
 				 
 				
@@ -76,16 +104,37 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				echo "Please enter all the * required information";
 		
 			}else{
-					$result = mysqli_query($connect, $newContact);
-			
-				echo "FirstName: {$_POST['firstname']}<br />";
-				echo "LastName: {$_POST['lastname']}<br />";
-				echo "Phone: {$_POST['phone']}<br />";
-				echo "Email: {$_POST['emailaddress']}<br />";
-				echo "Title: {$_POST['jobtitle']}<br />";
-				echo "School: {$_POST['schoolcode']}<br />";
-				echo "Alt School: {$_POST['altschoolcode']}<br />";
-				echo "Lead: {$_POST['lead']}<br />";
+
+				$newContact = ("INSERT INTO contacts(
+						firstname,
+						lastname,
+						phone,
+						email,
+						title,
+						school_code,
+						alt_school_code,
+						lead)
+						VALUES(
+						'{$_POST['firstname']}',
+						'{$_POST['lastname']}',
+						'{$_POST['phone']}',
+						'{$_POST['emailaddress']}',
+						'{$_POST['jobtitle']}',
+						'{$_POST['schoolcode']}',
+						'{$_POST['altschoolcode']}',
+						'{$_POST['lead']}');");
+
+				$result = mysqli_query($connect, $newContact);
+				
+				$success = 
+				("FirstName: {$_POST['firstname']}<br />
+				LastName: {$_POST['lastname']}<br />
+				Phone: {$_POST['phone']}<br />
+				Email: {$_POST['emailaddress']}<br />
+				Title: {$_POST['jobtitle']}<br />
+				School: {$_POST['schoolcode']}<br />
+				Alt School: {$_POST['altschoolcode']}<br />
+				Lead: {$_POST['lead']}<br />");
 				
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');
 				
@@ -98,6 +147,7 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			}
 		}
 
+
 	
 	//SEARCH______________________________________________________________________
 	
@@ -106,4 +156,6 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 		echo "SEARCH TERM: {$_POST['search']}<br />";
 
 	}
+
+
 ?>

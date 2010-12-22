@@ -27,13 +27,33 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 
 			$result = mysqli_query($connect, $newEvent);
 			
-			 	
-			echo "Date: {$_POST['date']}<br />";
-			echo "Inquiry: {$_POST['inquiry']}<br />";
-			echo "Attended: {$_POST['attendance']}<br /><br />";
-			echo "Contact Type: {$_POST['radio']}<br /><br />";
-			echo "Notes: {$_POST['notes']}<br /><br />";
+			$success = 	
+			(" <table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
+			  <tr>
+				<th scope='row' align='left'>Date:</th>
+				<td>{$_POST['date']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Inquiry:</th>
+				<td>{$_POST['inquiry']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Attended:</th>
+				<td>{$_POST['attendance']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Contact Type:</th>
+				<td>{$_POST['radio']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Notes:</th>
+				<td>{$_POST['notes']}</td>
+			  </tr>
+			</table>");
 			
+			
+			
+
 			require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');
 			
 		if(!$result) {
@@ -71,14 +91,32 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 	
 				$result = mysqli_query($connect, $newUser);
 				 
-				
-				echo 'You added the following user. YAY!';
-				echo "First Name: {$_POST['firstname']}<br />";
-				echo "Last Name: {$_POST['lastname']}<br />";
-				echo "Email: {$_POST['emailaddress']}<br />";
-				echo "User Role: {$_POST['role']}<br />";
-				echo "UserName: {$_POST['username']}<br />";
-				echo "Pass: {$_POST['password']}<br />";
+				$success =
+				("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
+			  <tr>
+				<th scope='row' align='left'>First Name:</th>
+				<td>{$_POST['firstname']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Last Name:</th>
+				<td>{$_POST['lastname']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Email:</th>
+				<td>{$_POST['emailaddress']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>User Role:</th>
+				<td>{$_POST['role']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>UserName:</th>
+				<td>{$_POST['username']}</td>
+			  </tr><tr>
+				<th scope='row' align='left'>Password:</th>
+				<td>{$_POST['password']}</td>
+			  </tr>
+			</table>");
 				
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');	
 
@@ -127,14 +165,35 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				$result = mysqli_query($connect, $newContact);
 				
 				$success = 
-				("FirstName: {$_POST['firstname']}<br />
-				LastName: {$_POST['lastname']}<br />
-				Phone: {$_POST['phone']}<br />
-				Email: {$_POST['emailaddress']}<br />
-				Title: {$_POST['jobtitle']}<br />
-				School: {$_POST['schoolcode']}<br />
-				Alt School: {$_POST['altschoolcode']}<br />
-				Lead: {$_POST['lead']}<br />");
+				("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
+			  <tr>
+				<th scope='row' align='left'>First Name:</th>
+				<td>{$_POST['firstname']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Last Name:</th>
+				<td>{$_POST['lastname']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Email:</th>
+				<td>{$_POST['emailaddress']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Title:</th>
+				<td>{$_POST['jobtitle']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>School:</th>
+				<td>{$_POST['schoolcode']}</td>
+			  </tr>
+			  <tr>
+				<th scope='row' align='left'>Alt School:</th>
+				<td>{$_POST['altschoolcode']}</td>
+			  </tr><tr>
+				<th scope='row' align='left'>Lead Counselor:</th>
+				<td>{$_POST['lead']}</td>
+			  </tr>
+			</table");
 				
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');
 				

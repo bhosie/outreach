@@ -74,9 +74,9 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			empty($_POST['username']) ||  empty($_POST['password'])){
 					echo "Please enter all the * required information";
 		}else{
-			$checkcontact = "SELECT * FROM users
-									WHERE lastname = '{$_POST['lastname']}'
-									AND firstname = '{$_POST['firstname']}';";
+				$checkcontact = "SELECT * FROM users
+									WHERE username = '	`{$_POST['username']}'
+									AND lastname = '{$_POST['lastname']}';";
 			
 				$check = mysqli_query($connect, $checkcontact);
 				

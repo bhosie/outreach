@@ -15,9 +15,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
     <h1>Error</h1>
 
-    <p><?php echo $indatabase; echo $result; ?> </p>
+    <p><strong><?php echo $indatabase; echo $result; ?> </strong></p>
 		
-			<br />
+<br />
 			<br />
 			<br />
 

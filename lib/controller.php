@@ -2,17 +2,28 @@
 
 //require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sqlstatements.php');
 require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
-	
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');	
 
 	//EVENT______________________________________________________________________________
 	
 	if(isset($_POST['event'])){
-
-if (empty($_POST['date']) ||  empty($_POST['notes'])){
+		
+			$date = ($_POST['date']);
+			 					
+			if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			$error = "Please enter all the * required information";
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+		}
+		else if (!ereg ("([0-9]{4})-([0-9]{2})-([0-9]{2})", $date)) {
+				$FormValid="False";
+				$error = "Wrong date format";
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+			
+		
 		}else{
-
+			
+			
+			
 			$newEvent = ("INSERT INTO details (
 					contact_date,
 					contact_type,

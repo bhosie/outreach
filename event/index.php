@@ -33,8 +33,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			?>
 
     <label for="date"><b><span class="req">*</span>Date</b>
-			<input id="date" name="date" type="text" class="f-name" tabindex="" /><br />
-			</label>
+<input name="date" type="text" class="f-name" id="date" tabindex="" maxlength="10" /><br /><p>YYYY-MM-DD</p>
+		  </label>
 			
 			<label for="inquiry"><b>Inquiry Type:</b>
 			<select id="inquiry" name="inquiry" tabindex="4">

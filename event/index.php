@@ -13,7 +13,20 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	
 <!--Begin Page Content -->		
     <div id="content">
-
+		<form action="../lib/searchcontroller.php" method="post" class="f-wrap-1">
+		<label for="searchcontact">Enter the Last Name of A Contact Person:</label>
+			<input id="searchcontact" name="searchcontact" type="text" />
+			<input type="submit" name="search" value="Search" class="f-submit" />
+			<br />
+			<?php
+				if(1==1){
+					echo('John Doe <br />
+						Hunter High School<br />
+						jdoe@school.org<br />
+						801-555-1212<br />');
+				}
+			?>
+		</form>
         <form action="../lib/controller.php" method="post" class="f-wrap-1">
 
 			<div class="req"><b>*</b> Indicates required field</div>
@@ -22,15 +35,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 			<h3>Add A New Event</h3>
 			
-			<label for="searchcontact">Enter the Last Name of A Contact Person:</label>
-			<input id="searchcontact" name="searchcontact" type="text" />
-			<input type="submit" name="search" value="Search" class="f-submit" />
-			<br />
-			<?php
-				//statement goes here to display selected Contact Person
-				//for now, echo something:
-				echo('John Doe <br /> Hunter High School<br />jdoe@school.org<br /> 801-555-1212');
-			?>
+			
 
     <label for="date"><b><span class="req">*</span>Date</b>
 			<input id="date" name="date" type="text" class="f-name" tabindex="" /><br />

@@ -199,12 +199,16 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 					exit();
 					
 			}
+			$phone = ($_POST['phone']);
+			if( !preg_match("/^[0-9]{10}$/", $phone) ) { 
 			
-			
+					
+					$error = "Invalid phone number";
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					return false;
+					}
 			$email = ($_POST['emailaddress']);
 			
-   
-      
 			if( !preg_match("/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/i", $email) ) { 
 			
 					

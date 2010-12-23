@@ -9,7 +9,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 	if(isset($_POST['event'])){
 
 if (empty($_POST['date']) ||  empty($_POST['notes'])){
-		echo "Please enter all the * required information";
+			$error = "Please enter all the * required information";
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		}else{
 
 			$newEvent = ("INSERT INTO details (
@@ -58,7 +59,7 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			
 		if(!$result) {
 				$error = "Query error: " . mysqli_error($connect);
-				echo $error;
+				
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 				exit();
 			}
@@ -72,9 +73,10 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||
 			empty($_POST['emailaddress']) ||  empty($_POST['role']) ||
 			empty($_POST['username']) ||  empty($_POST['password'])){
-					echo "Please enter all the * required information";
+					$error = "Please enter all the * required information";
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		}else{
-				$checkcontact = "SELECT * FROM users
+				$checkcontact = "SELECT username, lastname FROM users
 									WHERE username = '	`{$_POST['username']}'
 									AND lastname = '{$_POST['lastname']}';";
 			
@@ -84,7 +86,7 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				$rowcount = mysqli_num_rows($check);
 	
 			if($rowcount == 1){
-				$indatabase = ("This person is already in the data base!");
+				$error = ("Could not add user! The username '{$_POST['username']}' is taken. Please enter a different username and try again.");
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
 					
@@ -108,7 +110,8 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				$result = mysqli_query($connect, $newUser);
 				 
 				$success =
-				("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
+				("You created a new user with the following information: <br />
+				<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
 			  <tr>
 				<th scope='row' align='left'>First Name:</th>
 				<td>{$_POST['firstname']}</td>
@@ -134,8 +137,8 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');	
 			
 				if(!$result) {
-					$result = "Query error: " . mysqli_error($connect);
-					echo $error;
+					$error = "Query error: " . mysqli_error($connect);
+					
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
 				}
@@ -152,20 +155,23 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||
 			empty($_POST['phone']) ||  empty($_POST['jobtitle']) ||
 			empty($_POST['schoolcode'])  ||  !is_numeric($_POST['phone'])){
-				echo "Please enter all the * required information";
+				$error = "Please enter all the * required information";
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 	
 	}else{
-			$checkcontact = "SELECT * FROM contacts
+			//Ping DB to see if Contact already exists
+			$checkcontact = "SELECT lastname, firstname FROM contacts
 									WHERE lastname = '{$_POST['lastname']}'
 									AND firstname = '{$_POST['firstname']}';";
 			
-				$check = mysqli_query($connect, $checkcontact);
+			$check = mysqli_query($connect, $checkcontact);
 				
 				
-				$rowcount = mysqli_num_rows($check);
+			$rowcount = mysqli_num_rows($check);
 	
 			if($rowcount == 1){
-				$indatabase = ("This person is already in the data base!");
+				$error = ("Could not add contact! This contact person already exists:
+							'{$_POST['lastname']}' '{$_POST['firstname']}'" );
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
 					
@@ -246,40 +252,47 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 	
 	else if(isset($_POST['searchsite'])){
 
-		echo "SEARCH TERM: {$_POST['searchsite']}<br />";
-
+		if(empty($_POST['searchsite'])){
+			$error = "Please enter a search term.";
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+		
+			}else{
+			echo "<br />SEARCH TERM: {$_POST['searchsite']}<br />";
+			
+			}
 	}
 
 // CONTACT PERSON SEARCH______________________________________________________________________
 	
 	else if(isset($_POST['searchcontact'])){
 		
-		if(!empty($_POST['searchcontact'])){
+		if(empty($_POST['searchcontact'])){
+			$error = "Please enter a Contact Person's Last Name.";
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		
-			$contactsearch = "SELECT lastname, firstname FROM contacts
-							WHERE lastname = '{$_POST['searchcontact']}';";
+			}else{
+				$contactsearch = "SELECT lastname, firstname FROM contacts
+								WHERE lastname = '{$_POST['searchcontact']}';";
 
-			$result = mysqli_query($connect, $contactsearch);
+				$result = mysqli_query($connect, $contactsearch);
 
-			if(!$result) {
-				$error = "Query error: " . mysqli_error($connect);
+				if(!$result) {
+					$error = "Query error: " . mysqli_error($connect);
 		
-				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-				exit();
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					exit();
+				}
 		
-			}
-		//echo "You Searched for this person: {$_POST['searchcontact']}<br />";
-		
-		$rowcount = mysqli_num_rows($result);
+				$rowcount = mysqli_num_rows($result);
 	
-		if($rowcount == 1){
-			echo $contactsearch;
-	}else {
-		$result = "No Contacts Found";
-		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+				if($rowcount == 1){
+					echo $contactsearch;
+				}else {
+					$error = "No Contacts Found";
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		
-	}
-		}else{ echo 'Enter a search term';}
+				}
+			}
 	}
 
 

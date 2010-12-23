@@ -15,7 +15,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	<div id="content">
 
     <h1>Success</h1>
-	<h3>You entered the following information:</h3>
+	<h3>Information Successfully Added</h3>
     <p><?php echo $success ?></p>
 		
 			<br />

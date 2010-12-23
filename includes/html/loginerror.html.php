@@ -13,9 +13,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 	<div id="content">
 
-    <h1>Error</h1>
+    <h1>Login Error</h1>
 
-    <p><?php echo /*$output*/ 'error goes here'; ?></p>
+    <p><?php echo $error; ?></p>
 		
 			<br />
 			<br />

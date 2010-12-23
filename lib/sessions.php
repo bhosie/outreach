@@ -2,6 +2,7 @@
 	session_start();
 	
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 	
 
 	$authentication = "SELECT username FROM users
@@ -38,10 +39,10 @@
 		
 		$_SESSION['username'] = $_POST['username'];
 		$_SESSION['user_role'] = $userrole;
-		echo $_SESSION['username'];
-		echo $_SESSION['user_role'];
+		//echo $_SESSION['username'];
+		//echo $_SESSION['user_role'];
  
-		//header('Location: /outreach/home/');
+		header('Location: /outreach/home/');
 	}else {
 		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
 	}

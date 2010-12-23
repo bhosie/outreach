@@ -1,4 +1,5 @@
 <?php
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 
 $username = 'outreach';
 $hostname = 'localhost';

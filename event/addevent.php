@@ -22,6 +22,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 			<h3>Add A New Event</h3>
 	<?php
+				//Receive a search flag from SearchController.php
 				if(isset($searched)){
 						if($firstname == !null){echo $firstname . "<br />";}
 						if($lastname == !null){echo $lastname . "<br />";}
@@ -33,17 +34,20 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 						if($city == !null){echo $city . "<br />";}
 						if($state == !null){echo $state . "<br />";}
 						if($zip == !null){echo $zip . "<br />";}
+						//echo "contact ID: " . $contact_id;
 
 				}else{
+					//Search Flag was not set!
 					echo "You did not search for anyone.<br /><br />";
-					
 					exit();
 				}
 			?>
 			
 			
-
+<?php print $contact_id; ?>
+<input name="contact-id" type="hidden" value="<?php print $contact_id; ?>"/>
     <label for="date"><b><span class="req">*</span>Date</b>
+
 <input name="date" type="text" class="f-name" id="date" tabindex="" maxlength="10" /><br /><p>YYYY-MM-DD</p>
 		  </label>
 			

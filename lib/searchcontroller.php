@@ -43,6 +43,7 @@ require('db.inc.php');
 				}	
 	
 				if($rowcount == 1){
+					//Set a flag for addevent.php that notifies the page the a search was submitted.
 					$searched = TRUE;
 					
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/addevent.php');

@@ -26,12 +26,14 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 			
 			
 			$newEvent = ("INSERT INTO details (
+					contact_id,
 					contact_date,
 					contact_type,
 					num_attend,
 					in_out,
 					notes)
 					VALUES(
+					'{$_POST['contact-id']}',
 					'{$_POST['date']}',
 					'{$_POST['inquiry']}',
 					'{$_POST['attendance']}',

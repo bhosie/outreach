@@ -18,68 +18,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			<input id="searchcontact" name="searchcontact" type="text" />
 			<input type="submit" name="search" value="Search" class="f-submit" />
 			<br />
-			<?php
-				if(1==1){
-					echo('John Doe <br />
-						Hunter High School<br />
-						jdoe@school.org<br />
-						801-555-1212<br />');
-				}
-			?>
+			
 		</form>
-        <form action="../lib/controller.php" method="post" class="f-wrap-1">
-
-			<div class="req"><b>*</b> Indicates required field</div>
-
-			<fieldset>
-
-			<h3>Add A New Event</h3>
-			
-			
-
-    <label for="date"><b><span class="req">*</span>Date</b>
-<input name="date" type="text" class="f-name" id="date" tabindex="" maxlength="10" /><br /><p>YYYY-MM-DD</p>
-		  </label>
-			
-			<label for="inquiry"><b>Inquiry Type:</b>
-			<select id="inquiry" name="inquiry" tabindex="4">
-			<option>Select...</option>
-			<option>phone</option>
-			<option>email</option>
-			<option>booth event</option>
-			<option>presentation</option>
-			</select>
-			<br />
-	</label>
-
-    <label for="attendance"><b>How many attended?<br />(If applicable)</b>
-		<input id="attendance" name="attendance" type="text" class="f-name" tabindex="1" /><br />
-	</label>			
-
-	<fieldset class="f-radio-wrap">
-
-		<b>Contact Type</b>
-
-			<fieldset>
-			    <label for="in">
-			    <input id="contact-type" type="radio" name="in_out" value="incoming" class="f-radio" tabindex="8" />
-			    Incoming</label>
-
-			    <label for="out">
-			    <input id="contact-type" type="radio" name="in_out" value="outgoing" class="f-radio" tabindex="9" />
-			    Outgoing</label>
-			</fieldset>
-
-	</fieldset>
-
-    <label for="notes"><b><span class="req">*</span>Notes:</b>
-			<textarea id="notes" name="notes" type="text" cols="40" rows="5" class="f-name" tabindex="2" /></textarea><br />
-	</label>
-
-    <hr/>
-    <input type="submit" name="event" value="Add Event" class="f-submit" tabindex="10" />
-    </form>
-
+        
 <?php
 
 //Include Footer

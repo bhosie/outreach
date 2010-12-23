@@ -29,6 +29,7 @@ require('db.inc.php');
 				$rowcount = mysqli_num_rows($result);
 				while ($row = mysqli_fetch_assoc($result)) {
 				//Set result variables
+				$contact_id = $row['contact_id'];
      			$firstname = $row['firstname'];
 				$lastname = $row['lastname'];
 				$email = $row['email'];
@@ -42,8 +43,9 @@ require('db.inc.php');
 				}	
 	
 				if($rowcount == 1){
-					echo $firstname, $lastname;
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/index.php');
+					$searched = TRUE;
+					
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/addevent.php');
 
 				}else if($rowcount > 1){
 					$error = "Multiple Contacts Found! Please Contact the Administrator.";

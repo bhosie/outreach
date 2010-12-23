@@ -8,7 +8,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 ************************** REPORTING FUNCTIONS ***********************************/
 
 //Get counselor/contact plus school info
-$getcontact = ("SELECT contacts.firstname, contacts.lastname, contacts.email, contacts.phone, 
+$getcontact = ("SELECT contacts.contact_id, contacts.firstname, contacts.lastname,
+				contacts.email, contacts.phone, 
 				contacts.title, school.school_name, school.address, school.city,
 				school.state, school.zip
 				FROM school, contacts

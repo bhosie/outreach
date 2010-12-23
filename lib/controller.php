@@ -253,5 +253,38 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 
 	}
 
+// CONTACT PERSON SEARCH______________________________________________________________________
+	
+	else if(isset($_POST['searchcontact'])){
+		
+		if(!empty($_POST['searchcontact'])){
+		
+			$contactsearch = "SELECT lastname, firstname FROM contacts
+							WHERE lastname = '{$_POST['searchcontact']}';";
+
+			$result = mysqli_query($connect, $contactsearch);
+
+			if(!$result) {
+				$error = "Query error: " . mysqli_error($connect);
+		
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+				exit();
+		
+			}
+		//echo "You Searched for this person: {$_POST['searchcontact']}<br />";
+		
+		$rowcount = mysqli_num_rows($result);
+	
+		if($rowcount == 1){
+			echo $contactsearch;
+	}else {
+		$result = "No Contacts Found";
+		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+		
+	}
+		}else{ echo 'Enter a search term';}
+	}
+
+
 
 ?>

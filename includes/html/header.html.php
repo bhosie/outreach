@@ -35,7 +35,6 @@ http://creativecommons.org/licenses/GPL/2.0/
 		</div>
 		<ul id="nav">
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/home/index.php'){echo " class='active'";} ?>><a href="/outreach/home/">Home</a></li>
-		<!--<li class="active"><a href="/submit/">Submit</a></li>   Need to dynamically display active link -->
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/event/index.php'){echo " class='active'";} ?> ><a href="/outreach/event/">Events</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/newcontact/index.php'){echo " class='active'";} ?>><a href="/outreach/newcontact/">New Contact</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/reports/index.php'){echo " class='active'";} ?>><a href="/outreach/reports/">Reports</a></li>

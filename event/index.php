@@ -21,7 +21,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			<fieldset>
 
 			<h3>Add A New Event</h3>
-
+			
+			<label for="searchcontact">Enter the Last Name of A Contact Person:</label>
+			<input id="searchcontact" name="searchcontact" type="text" />
+			<input type="submit" name="search" value="Search" class="f-submit" />
+			<br />
 			<?php
 				//statement goes here to display selected Contact Person
 				//for now, echo something:

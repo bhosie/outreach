@@ -128,9 +128,6 @@ if (empty($_POST['date']) ||  empty($_POST['notes'])){
 			  <tr>
 				<th scope='row' align='left'>UserName:</th>
 				<td>{$_POST['username']}</td>
-			  </tr><tr>
-				<th scope='row' align='left'>Password:</th>
-				<td>{$_POST['password']}</td>
 			  </tr>
 			</table>");
 				

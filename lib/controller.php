@@ -14,7 +14,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 			$error = "Please enter all the * required information";
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		}
-		else if (!ereg ("([0-9]{4})-([0-9]{2})-([0-9]{2})", $date)) {
+		else if (!ereg ("([0-9]{4})-([0-1]{1}([0-9]){1})-([0-3]{1})([0-9]{1})", $date)) {
 				$FormValid="False";
 				$error = "Wrong date format";
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');

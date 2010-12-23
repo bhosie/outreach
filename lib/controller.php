@@ -102,6 +102,17 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 					exit();
 					
 			}
+			$email = ($_POST['emailaddress']);
+			
+   
+      
+			if( !preg_match("/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/i", $email) ) { 
+			
+					
+					$error = "Invalid email";
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					return false;
+					}
 				else {
 				$newUser = ("INSERT INTO users(
 					firstname,
@@ -187,6 +198,19 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 					exit();
 					
 			}
+			
+			
+			$email = ($_POST['emailaddress']);
+			
+   
+      
+			if( !preg_match("/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/i", $email) ) { 
+			
+					
+					$error = "Invalid email";
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					return false;
+					}
 				else {
 					
 				$newContact = ("INSERT INTO contacts(

@@ -107,10 +107,12 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 			
    
       
-			if( !preg_match("/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/i", $email) ) { 
 			
+				if(!preg_match("/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*
+								(.[a-z]{2,3})$/i", $email)){
 					
 					$error = "Invalid email";
+					
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					return false;
 					}
@@ -166,6 +168,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 					exit();
 				}
 			}
+			
 		}
 	}
 

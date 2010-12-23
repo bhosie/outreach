@@ -34,7 +34,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		    <input name="phone" type="text" class="f-email" id="phone" tabindex="3" maxlength="10" /><br />
 		</label>
 		
-		<label for="emailaddress"><b>Email Address:</b>
+		<label for="emailaddress"><b><span class="req">*</span>Email Address:</b>
 		    <input id="emailaddress" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 		

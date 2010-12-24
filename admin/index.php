@@ -9,6 +9,14 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.p
 //include sidebar content
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
+
+if($_SESSION['user_role'] != 'A'){
+
+	echo "You are not an admin";
+	exit();
+}else{echo "You are an admin";}
+
+
 ?>
 		
 	<div id="content">

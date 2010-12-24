@@ -18,7 +18,7 @@ if(isset($_POST['login'])){
 	
 	if(!$result || !$roleresult) {
 		$error = "Query error: " . mysqli_error($connect);
-		
+		$error = "result || role result error";
 		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
 		exit();
 		
@@ -32,7 +32,9 @@ if(isset($_POST['login'])){
 }	
 	
 	if($rowcount == 1){
-				
+		//if user is found, start a session. throughout app, session_start() will be 
+		//carried by secureheader.html.php
+		session_start();
 		$_SESSION['username'] = $_POST['username'];
 		$_SESSION['user_role'] = $userrole;
 		$_SESSION['user_ID'] = $userID;
@@ -42,6 +44,7 @@ if(isset($_POST['login'])){
 	}else {
 		$error = "Please provide your login credentials.";
 		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
+		exit();
 	}
 
 }

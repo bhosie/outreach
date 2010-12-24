@@ -1,11 +1,10 @@
 <?php
 //
 //
-//This file does a session check for all files other than /login/index.php
+//This file Contains session_start() for all files requiring session data
 //
+session_start();
 
-//Require Sessions File
-require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sessions.php'); //FIXME
 	
 	if (!isset($_SESSION['username'])) {
 		header('Location: /outreach/login/');

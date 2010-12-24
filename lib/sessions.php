@@ -40,11 +40,9 @@ if(isset($_POST['login'])){
  
 		header('Location: /outreach/home/');
 	}else {
+		$error = "Please provide your login credentials.";
 		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
 	}
 
-}else{
-	$error = "Please provide your login credentials";
-	include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
 }
 ?>

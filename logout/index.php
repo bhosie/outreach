@@ -3,12 +3,14 @@
 //logout/index.php
 //
 //
-if (isset($_SESSION['username'])){
+session_start();
+if (!isset($_SESSION['username'])){
+    $logout = "Request not completed. You are not currently logged in.";
+	
+}
 	session_destroy();
 	$logout = 'You are now logged out'; 
-}else{
-	$logout = "Request not completed. You are not currently logged in.";
-}
+
 //include html header file
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/header.html.php');
 

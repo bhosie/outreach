@@ -13,7 +13,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		
 	<div id="content">
 		
-		<form action="../lib/controller.php" method="post" class="f-wrap-1">
+		<form action="../lib/admincontroller.php" method="post" class="f-wrap-1">
 		
 		<div class="req"><b>*</b> Indicates required field</div>
 			

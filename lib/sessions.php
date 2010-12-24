@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 	
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 	//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');

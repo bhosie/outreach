@@ -3,7 +3,7 @@
 //
 //This file Contains session_start() for all files requiring session data
 //
-//session_start();
+session_start();
 
 	
 	if (!isset($_SESSION['username'])) {

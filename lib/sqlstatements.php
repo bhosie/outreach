@@ -2,7 +2,7 @@
 //
 //this file houses the various SQL REPORTING statements used throughout the application
 //
-require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
+//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 
 /*********************************************************************************
 ************************** REPORTING FUNCTIONS ***********************************/

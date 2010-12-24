@@ -21,7 +21,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			<br />
 			<br />
 
-			<?php
+
+<?php
 
 //Include Footer
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/footer.html.php');

@@ -8,6 +8,8 @@ if(isset($_POST['event']) || isset($_POST['contact']) ||
 		//do nothing, continue with script
 }else{ 
 	//DIRECT NAVIGATION TO RISTRICTED PAGE! Redirect to home.
-	header('Location: /outreach/home');
+	//include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+echo 'noNavigationPage <br />';
+	
 }
 ?>

@@ -1,15 +1,15 @@
 <?php
-	session_start();
+session_start();
 	
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
-	require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
+	//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 	
-
+if(isset($_POST['login'])){
 	$authentication = "SELECT username FROM users
 						WHERE username = '{$_POST['username']}'
 						AND password = md5('{$_POST['password']}');";
 
-	$role = "SELECT user_role FROM users
+	$role = "SELECT user_role, user_id FROM users
 				WHERE username = '{$_POST['username']}';";
 
 						
@@ -28,24 +28,23 @@
 
 	while ($row = mysqli_fetch_assoc($roleresult)) {
      $userrole = $row['user_role'];
+	 $userID = $row['user_id'];
 }	
 	
 	if($rowcount == 1){
-		
-		//convert USER ROLE to string
-		//$userrole = mysqli_result($roleresult);
-		//If user exists, grab user role
-		
-		
+				
 		$_SESSION['username'] = $_POST['username'];
 		$_SESSION['user_role'] = $userrole;
-		//echo $_SESSION['username'];
-		//echo $_SESSION['user_role'];
+		$_SESSION['user_ID'] = $userID;
+		
  
 		header('Location: /outreach/home/');
 	}else {
 		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
 	}
 
-
+}else{
+	$error = "Please provide your login credentials";
+	include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
+}
 ?>

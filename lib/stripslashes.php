@@ -1,5 +1,5 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
+//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 
  if(get_magic_quotes_gpc()) {
  

@@ -78,100 +78,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 			}
 		}	
 	}
-	
-//USER________________________________________________________________________________
-	
-	else if(isset($_POST['user'])){
-		//Check that all fields were filled out
-		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||
-			empty($_POST['emailaddress']) ||  empty($_POST['role']) ||
-			empty($_POST['username']) ||  empty($_POST['password'])){
-					$error = "Please enter all the * required information";
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-		
-		//Check for a valid email address
-		}else if(!preg_match("/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*
-								(.[a-z]{2,3})$/i", $_POST['emailaddress'])){
-					
-					$error = "Invalid email";
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-		}
-
-
-		//If all fields are complete and email is valid, Ensure user does not exist already
-		$checkcontact = "SELECT username, lastname FROM users
-						WHERE username = '	`{$_POST['username']}'
-						AND lastname = '{$_POST['lastname']}';";
-			
-		$check = mysqli_query($connect, $checkcontact);
-				
-				
-		$rowcount = mysqli_num_rows($check);
-	
-		if($rowcount == 1){
-				$error = ("Could not add user! The username '{$_POST['username']}' is taken. 								Please enter a different username and try again.");
-				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-					exit();
-					
-			}else {
-				//If user is not in database, add new user.
-				$newUser = ("INSERT INTO users(
-					firstname,
-					lastname,
-					email,
-					user_role,
-					username,
-					password)
-					VALUES(
-					'{$_POST['firstname']}',
-					'{$_POST['lastname']}',
-					'{$_POST['emailaddress']}',
-					'{$_POST['role']}',
-					'{$_POST['username']}',
-					md5('{$_POST['password']}'));");
-	
-				$result = mysqli_query($connect, $newUser);
-				//Set variable for success page 
-				$success =
-				("You created a new user with the following information: <br />
-				<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
-			  <tr>
-				<th scope='row' align='left'>First Name:</th>
-				<td>{$_POST['firstname']}</td>
-			  </tr>
-			  <tr>
-				<th scope='row' align='left'>Last Name:</th>
-				<td>{$_POST['lastname']}</td>
-			  </tr>
-			  <tr>
-				<th scope='row' align='left'>Email:</th>
-				<td>{$_POST['emailaddress']}</td>
-			  </tr>
-			  <tr>
-				<th scope='row' align='left'>User Role:</th>
-				<td>{$_POST['role']}</td>
-			  </tr>
-			  <tr>
-				<th scope='row' align='left'>UserName:</th>
-				<td>{$_POST['username']}</td>
-			  </tr>
-			</table>");
-				
-				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');	
-			
-				//Throw error if user was not added
-				if(!$result) {
-					$error = "Query error: " . mysqli_error($connect);
-					
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-					exit();
-				}
-			}
-			
-		
-	}
-
-
 
 	//CONTACT_____________________________________________________________________________________
 	
@@ -304,38 +210,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 			}
 	}
 
-// CONTACT PERSON SEARCH______________________________________________________________________
-	
-	else if(isset($_POST['searchcontact'])){
-		
-		if(empty($_POST['searchcontact'])){
-			$error = "Please enter a Contact Person's Last Name.";
-			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-		
-			}else{
-				$contactsearch = "SELECT lastname, firstname FROM contacts
-								WHERE lastname = '{$_POST['searchcontact']}';";
-
-				$result = mysqli_query($connect, $contactsearch);
-
-				if(!$result) {
-					$error = "Query error: " . mysqli_error($connect);
-		
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-					exit();
-				}
-		
-				$rowcount = mysqli_num_rows($result);
-	
-				if($rowcount == 1){
-					echo $contactsearch;
-				}else {
-					$error = "No Contacts Found";
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-		
-				}
-			}
-	}
 
 
 

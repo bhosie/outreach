@@ -33,12 +33,22 @@ http://creativecommons.org/licenses/GPL/2.0/
 			<input type="submit" name="search" value="Search" class="f-submit" />
 			</form>
 		</div>
+
+		<?php
+			//Set $sessionvar to null if no session is present to avoid an error in the nav menu
+			if(isset($_SESSION['user_role'])){
+				$sessionvar = $_SESSION['user_role'];
+				}else{
+					$sessionvar = null;
+				}
+		?>
+
 		<ul id="nav">
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/home/index.php'){echo " class='active'";} ?>><a href="/outreach/home/">Home</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/event/index.php'){echo " class='active'";} ?> ><a href="/outreach/event/">Events</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/newcontact/index.php'){echo " class='active'";} ?>><a href="/outreach/newcontact/">New Contact</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/reports/index.php'){echo " class='active'";} ?>><a href="/outreach/reports/">Reports</a></li>
-		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/admin/index.php'){echo " class='active'";} ?>><a href="/outreach/admin/">Admin</a></li>
+		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/admin/index.php'){echo " class='active'";} ?>><?php if($sessionvar == 'A'){ echo "<a href='/outreach/admin/'>Admin</a>";}?></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/logout/index.php'){echo " class='active'";} ?>><a href="/outreach/logout/">Logout</a></li>
 		</ul>
 	</div>

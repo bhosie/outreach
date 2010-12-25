@@ -41,10 +41,16 @@ if(isset($_POST['login'])){
 		
  
 		header('Location: /outreach/home/');
-	}else {
-		$error = "Please provide your login credentials.";
-		include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
-		exit();
+	}else if($rowcount > 1){
+			$error = "More than one account exists with this USERNAME. Please contact the administrator.";
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
+			exit();
+
+		}else {
+			$error = "Could not log in. Please check your login credentials and try again.";
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
+			exit();
+
 	}
 
 }

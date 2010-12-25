@@ -10,17 +10,19 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.p
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 
-if($_SESSION['user_role'] != 'A'){
-
-	echo "You are not an admin";
-	exit();
-}else{echo "You are an admin";}
+	
 
 
 ?>
 		
 	<div id="content">
-		
+			<?php if($_SESSION['user_role'] != 'A'){
+
+	echo "Access denied. You do not have sufficient privileges to view this page.";
+	exit();
+}else{echo "You are an admin";}		
+?>
+
 		<form action="../lib/admincontroller.php" method="post" class="f-wrap-1">
 		
 		<div class="req"><b>*</b> Indicates required field</div>

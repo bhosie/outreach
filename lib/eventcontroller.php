@@ -1,5 +1,9 @@
 <?php
-
+//
+// /lib/eventcontroller.php
+//
+//This file is responsible for handling the form data from event/addevent.php
+//
 require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 
 

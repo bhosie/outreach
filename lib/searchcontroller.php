@@ -1,7 +1,9 @@
 <?php
 //
+// /lib/searchcontroller.php
 //
-//Temp file while nate works on controller.php
+//This file is responsible for handling the form data from event/index.php where a user searches for a contact
+//
 require('sqlstatements.php');
 require('db.inc.php');
 

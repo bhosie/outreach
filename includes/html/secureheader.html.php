@@ -12,7 +12,9 @@ session_start();
 
 
 if(isset($_SESSION['user_ID'])){
-	echo $_SESSION['user_ID'];
+	echo 'Username: ' .$_SESSION['username'] . '<br />';
+	echo 'User ID: ' .$_SESSION['user_ID'] . '<br />';
+	echo 'User Role: ' . $_SESSION['user_role'];
 	}else{
 		echo "No Session";
 	}

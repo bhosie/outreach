@@ -47,19 +47,38 @@ http://creativecommons.org/licenses/GPL/2.0/
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/home/index.php'){echo " class='active'";} ?>><a href="/outreach/home/">Home</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/event/index.php'){echo " class='active'";} ?> ><a href="/outreach/event/">Events</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/newcontact/index.php'){echo " class='active'";} ?>><a href="/outreach/newcontact/">New Contact</a></li>
-		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/reports/index.php'){echo " class='active'";} ?>><a href="/outreach/reports/">Reports</a></li><!--
+		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/reports/index.php'){echo " class='active'";} ?>><a href="/outreach/reports/">Reports</a></li>
 		<?php
 			//Only display admin link if user is an admin.
 			if($sessionvar == 'A' && $_SERVER['PHP_SELF'] == '/outreach/admin/index.php'){
-				echo "<li class='active'><a href='/outreach/admin/index.php>Admin</a></li>";
+				echo "<li class='active'><a href='/outreach/admin/'>Admin</a></li>";
 			}else if($sessionvar == 'A' && $_SERVER['PHP_SELF'] != '/outreach/admin/index.php'){
-				echo "<li><a href='/outreach/admin/index.php>Admin</a></li>";
+				echo "<li><a href='/outreach/admin/'>Admin</a></li>";
 			}else{
 				//If the user is not an admin do not display link
 			}
 
-?> -->
-		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/logout/index.php'){echo " class='active'";} ?>><a href="/outreach/logout/">Logout</a></li>
+		?>
+	
+		<?php
+			//Check to see if we are logged in
+			if(isset($_SESSION['username'])){
+			$loggedin = TRUE;
+			}else{
+				$loggedin = FALSE;
+			}
+		
+			//Only display logout link if user is logged in.
+			if($loggedin == TRUE && $_SERVER['PHP_SELF'] == '/outreach/logout/index.php'){
+				echo "<li class='active'><a href='/outreach/logout/'>Logout</a></li>";
+			}else if($loggedin == TRUE && $_SERVER['PHP_SELF'] != '/outreach/logout/index.php'){
+				echo "<li><a href='/outreach/logout/'>Logout</a></li>";
+			}else{
+				//If the user is not logged in do not display link
+			}
+
+		?>
+		
 		</ul>
 	</div>
 

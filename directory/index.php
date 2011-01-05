@@ -14,7 +14,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	
 <!--Begin Page Content -->		
     <div id="content">
-		<form action="../lib/searchcontroller.php" method="post" class="f-wrap-1">
+		<form action="../lib/directorycontroller.php" method="post" class="f-wrap-1">
 		<label for="searchdirectory">Search the Directory:</label>
 			<input id="searchdirectory" name="searchdirectory" type="text" />
 			<input type="submit" name="search" value="Search" class="f-submit" />

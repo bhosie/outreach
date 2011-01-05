@@ -72,8 +72,17 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 
 				$result = mysqli_query($connect, $newContact);
 				
-				$success = 
-				("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
+				
+				
+				
+			if(!$result) {
+					$error = "Query error: " . mysqli_error($connect);
+					echo $error;
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					exit();
+				}else{
+					$success = 
+					("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
 			  <tr>
 				<th scope='row' align='left'>First Name:</th>
 				<td>{$_POST['firstname']}</td>
@@ -108,13 +117,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 			</table");
 				
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');
-				
-				
-			if(!$result) {
-					$error = "Query error: " . mysqli_error($connect);
-					echo $error;
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-					exit();
 				}
 			}
 		}

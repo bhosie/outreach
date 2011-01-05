@@ -32,6 +32,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 					exit();
 					
 			}
+
+			//Check for valid phone number format
 			$phone = ($_POST['phone']);
 			if( !preg_match("/^[0-9]{10}$/", $phone) ) { 
 			
@@ -40,6 +42,24 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					return false;
 					}
+
+			//Check for valid school
+			//FIXME: Need to capture the district code from index and check against the DB.
+			$schoollookup = "SELECT dist_code, school_code FROM school
+							WHERE school_code = '{$_POST['schoolcode']}'";
+
+			$checkschool = mysqli_query($connect, $schoollookup);
+
+			$rowcount = mysqli_num_rows($checkschool);
+	
+			if($rowcount < 1){
+				$error = "Invalid school";
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+				exit();
+
+			}
+
+			//Check for valid email format
 			$email = ($_POST['emailaddress']);
 			
 			if( !preg_match("/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/i", $email) ) { 

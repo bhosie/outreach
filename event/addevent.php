@@ -68,7 +68,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 	<fieldset class="f-radio-wrap">
 
-		<b>Contact Type</b>
+		<b><span class="req">*</span>Contact Type</b>
 
 			<fieldset>
 			    <label for="in">

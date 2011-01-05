@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 		
 			$date = ($_POST['date']);
 			 					
-			if (empty($_POST['date']) ||  empty($_POST['notes'])){
+			if (empty($_POST['date']) || empty($_POST['notes']) || empty($POST['in_out'])){
 			$error = "Please enter all the * required information";
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		}
@@ -40,7 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 					'{$_POST['date']}',
 					'{$_POST['inquiry']}',
 					'{$_POST['attendance']}',
-					'{$_POST['radio']}',
+					'{$_POST['in_out']}',
 					'{$_POST['notes']}');");
 
 			$result = mysqli_query($connect, $newEvent);
@@ -61,7 +61,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Contact Type:</th>
-				<td>{$_POST['radio']}</td>
+				<td>{$_POST['in_out']}</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Notes:</th>

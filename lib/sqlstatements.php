@@ -6,7 +6,7 @@
 
 /*********************************************************************************
 ************************** REPORTING FUNCTIONS ***********************************/
-
+echo "<br />SQLSTATEMENTS loaded<br />";
 //Get counselor/contact plus school info
 if(isset($_POST['searchcontact'])){
 $getcontact = ("SELECT contacts.contact_id, contacts.firstname, contacts.lastname,

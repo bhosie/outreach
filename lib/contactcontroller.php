@@ -25,7 +25,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 				
 			$rowcount = mysqli_num_rows($check);
 	
-			if($rowcount == 1){
+			if($rowcount >= 1){
 				$error = ("Could not add contact! This contact person already exists:
 							'{$_POST['lastname']}' '{$_POST['firstname']}'" );
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
@@ -81,6 +81,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
 				}else{
+
+					//If addition was successful, display the results
 					$success = 
 					("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
 			  <tr>

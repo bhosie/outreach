@@ -23,6 +23,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		<div id="content">
 
         <h1><?php echo $logout; ?></h1> 
+		<br />
+		<a href="/outreach/login/">Return to the Login Page</a>
 
         <br />
         <br />

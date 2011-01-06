@@ -25,8 +25,7 @@ $getdirectory = ("SELECT contacts.contact_id, contacts.firstname, contacts.lastn
 				contacts.title, school.school_name, school.address, school.city,
 				school.state, school.zip
 				FROM school, contacts
-    				WHERE school.school_code = contacts.school_code
-				AND contacts.lastname LIKE '{$_POST['searchdirectory']}';");
+    				WHERE contacts.lastname LIKE '{$_POST['searchdirectory']}';");
 }
 
 //Reporting: Get the num of calls

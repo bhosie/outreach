@@ -16,8 +16,6 @@ require('db.inc.php');
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		
 			}else{
-				/*$contactsearch = "SELECT firstname, lastname, FROM contacts
-								WHERE lastname = '{$_POST['searchcontact']}';";*/
 
 				$result = mysqli_query($connect, $getcontact);
 

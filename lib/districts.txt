@@ -1,5 +1,5 @@
 '01','Alpine School District','575 North 100 East','NULL','American Fork','UT','84003','8017568400','NULL'
-'02','Beaver School District','291 North Main St','Beaver','NULL','UT','84713','4354382291','NULL'
+'02','Beaver School District','291 North Main St','NULL','Beaver','UT','84713','4354382291','NULL'
 '03','Box Elder School District','960 South Main','NULL','Brigham City','UT','84302','4357344800','NULL'
 '04','Cache School District','2063 North 12th East','Logan','UT','84341','4357523945','NULL'
 '05','Carbon County School District','251 West 400 North','PO Box 1438','Price','UT','84501','4356371732','NULL'

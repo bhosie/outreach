@@ -2,9 +2,17 @@
 
 require('db.inc.php');
 
+//Ask for file resource
+$getFile = fwrite(STDOUT, "please enter the full path of the file you want to parse: \n");
+
+//get file name from console
+$receiveFile = rtrim(fgets(STDIN));
+
+echo "Receive file is: " . $receiveFile;
+
 //Open file handler for data
-$file = fopen("/opt/local/apache2/htdocs/outreach/lib/districts.txt", "r")
-			or die("Could not open file 'districts.txt'");
+$file = fopen($receiveFile, "r")
+		or die("Could not open file '".$receiveFile."'");
 
 //While !eof, cycle through each line of data and insert into DB
 $i= 1;

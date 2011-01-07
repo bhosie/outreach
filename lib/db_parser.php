@@ -48,6 +48,9 @@ while(!feof($file)){
 
 		$result = mysqli_query($connect, $insertDistricts);
 		
+		echo "insertDistricts: " . $insertDistricts . "\n";
+		echo "i= " . $i . "\n";
+		
 				
 				
 				
@@ -56,7 +59,7 @@ while(!feof($file)){
 					$error = "Query error: " . mysqli_error($connect);
 					echo "Error! District " . $i . " not added. ";
 					echo $error . "\n";
-					//exit();
+					
 				}else{
 					echo "District " . $i . " added. \n";
 				}

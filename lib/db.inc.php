@@ -23,8 +23,6 @@ $connect = mysqli_connect($hostname, $username, $password, $database);
 		//throw error
 		print mysqli_connect_error();
 		exit();
-	}else{
-	echo 'connection established';
 	}
 	
 /*

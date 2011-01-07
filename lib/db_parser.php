@@ -8,11 +8,19 @@ $getFile = fwrite(STDOUT, "please enter the full path of the file you want to pa
 //get file name from console
 $receiveFile = rtrim(fgets(STDIN));
 
-echo "Receive file is: " . $receiveFile;
+
 
 //Open file handler for data
-$file = fopen($receiveFile, "r")
-		or die("Could not open file '".$receiveFile."'");
+$file = fopen($receiveFile, "r");
+
+		//Handle error if file can't be opened
+		if(!$file){
+		echo "Could not open file: '".$receiveFile."'! Aborting script.";
+		exit();
+		
+		}else{
+		echo "File: " . "'".$receiveFile."'" . " successfully opened. \n Begin parsing... \n";
+		}
 
 //While !eof, cycle through each line of data and insert into DB
 $i= 1;

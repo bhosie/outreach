@@ -12,6 +12,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 ?>
 
 	<div id="content">
+	<?php 
+		if(isset($_SESSION)){
+			echo "<p>Welcome, {$_SESSION['firstname']}</p>";		
+		}
+	?>
     <h1>News & Updates</h1>
 
     <p>Tomorrow is international talk-like-a-pirate day. Arrr!</p>

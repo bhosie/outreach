@@ -20,7 +20,7 @@ if(isset($_POST['login'])){
 						AND password = md5('{$_POST['password']}');";
 
 	//Get the user's role/ access level so that appropriate permissions are enforced
-	$role = "SELECT user_role, user_id FROM users
+	$role = "SELECT user_role, user_id, firstname FROM users
 				WHERE username = '{$_POST['username']}';";
 
 						
@@ -40,6 +40,7 @@ if(isset($_POST['login'])){
 	while ($row = mysqli_fetch_assoc($roleresult)) {
      $userrole = $row['user_role'];
 	 $userID = $row['user_id'];
+	$firstname = $row['firstname'];
 }	
 	
 	if($rowcount == 1){
@@ -49,6 +50,8 @@ if(isset($_POST['login'])){
 		$_SESSION['username'] = $_POST['username'];
 		$_SESSION['user_role'] = $userrole;
 		$_SESSION['user_ID'] = $userID;
+		$_SESSION['firstname'] = $firstname;
+
 		
  
 		header('Location: /outreach/home/');

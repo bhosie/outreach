@@ -1,6 +1,6 @@
 <?php
 //
-// error.html.php
+// success.html.php
 //
 
 //Require the header2 file which contains session_start()

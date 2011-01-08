@@ -51,7 +51,6 @@ require('db.inc.php');
 		//If we get a match on old password and entered password, verify that newpassword and confirmpassword match
 		if(($_POST['newpassword']) == ($_POST['confirmnewpassword'])){
 			//If they match, update password in Database
-			echo "update password";
 
 			$newpassword = ($_POST['newpassword']);
 

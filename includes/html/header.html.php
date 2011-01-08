@@ -12,7 +12,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Utah Higher Education - Outreach</title>
+<title>UHEAA Outreach Services</title>
 <link rel="stylesheet" type="text/css" href="../includes/css/main.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="../includes/css/print.css" media="print" />
 <!--[if lte IE 6]>
@@ -25,7 +25,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 
 
 	<div id="header">
-		<div id="site-name">Utah Higher Education - Outreach</div>
+		<div id="site-name">UHEAA Outreach Services</div>
 		<div id="search">
 			<form action="../lib/controller.php" method="post">
 			<label for="searchsite">Site Search:</label>

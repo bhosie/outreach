@@ -1,7 +1,16 @@
 <?php
+//
+//lib/contactcontroller.php
+//
+//This file is responsible for handling form data received from newcontact/index.php and adding a new contact person to the DB.
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 
+//Require the secureheader file which contains session_start()
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
+
+//include sidebar content
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 	
 	//CONTACT_____________________________________________________________________________________

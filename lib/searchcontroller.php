@@ -7,6 +7,12 @@
 require('sqlstatements.php');
 require('db.inc.php');
 
+//Require the secureheader file which contains session_start()
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
+
+//include sidebar content
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
+
 // CONTACT PERSON SEARCH______________________________________________________________________
 	
 	if(isset($_POST['searchcontact'])){

@@ -4,9 +4,14 @@
 //
 //This file is responsible for handling the form data from password/index.php where a user changes their password
 //
-session_start();
 require('sqlstatements.php');
 require('db.inc.php');
+
+//Require the secureheader file which contains session_start()
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
+
+//include sidebar content
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 
 	if(isset($_POST['change'])){

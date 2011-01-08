@@ -1,14 +1,25 @@
 <?php
-
+//
+// lib/sessions.php
+//
+//This file is responsible for checking login credentials and starting a session if login is successful. Session is carried throughout app by includes/secureheader.html.php
 	
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
-	//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
+
+//Include header
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/header.html.php');
+
+//include sidebar content
+include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	
 if(isset($_POST['login'])){
+	
+	//Check login credentials
 	$authentication = "SELECT username FROM users
 						WHERE username = '{$_POST['username']}'
 						AND password = md5('{$_POST['password']}');";
 
+	//Get the user's role/ access level so that appropriate permissions are enforced
 	$role = "SELECT user_role, user_id FROM users
 				WHERE username = '{$_POST['username']}';";
 
@@ -43,12 +54,12 @@ if(isset($_POST['login'])){
 		header('Location: /outreach/home/');
 	}else if($rowcount > 1){
 			$error = "More than one account exists with this USERNAME. Please contact the administrator.";
-			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 			exit();
 
 		}else {
-			$error = "Could not log in. Please check your login credentials and try again.";
-			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/loginerror.html.php');
+			$error = "Could not log in. Please check your login credentials and <a href='/outreach/login/'>try again.</a>";
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 			exit();
 
 	}

@@ -13,17 +13,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 	<div id="content">
 	<?php 
-		if(isset($_SESSION)){
-			echo "<p>Welcome, {$_SESSION['firstname']}</p>";		
+		if(isset($_SESSION['username'])){
+			echo "<p>Welcome, {$_SESSION['firstname']}</p>";
+			//include homecontent file
+			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/homecontent.html.php');		
+		}else if(!isset($_SESSION['username'])){
+			echo "<p>You do not have sufficient privileges to view this page. Please <a href='/outreach/login/'>log in.</a></p>";
 		}
 	?>
-    <h1>News & Updates</h1>
-
-    <p>Tomorrow is international talk-like-a-pirate day. Arrr!</p>
-		
-			<br />
-			<br />
-			<br />
+    
 
 			<?php
 

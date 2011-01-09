@@ -3,6 +3,10 @@
 //newcontact/index.php
 //
 //
+
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/sqlstatements.php');
+
 //Require the header2 file which contains session_start()
 require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
 
@@ -42,8 +46,33 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		    <input id="jobtitle" name="jobtitle" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 
-		<label for="schoolcode"><b><span class="req">*</span>School Code<br />(3 Digit):</b>
-		    <input name="schoolcode" type="text" class="f-email" id="schoolcode" tabindex="3" maxlength="3" /><br />
+		<label for="schoolcode"><b><span class="req">*</span>School</b>
+		    <select id="schoolcode" name="schoolcode" tabindex="4">
+				<option>Select...</option>
+				<option>none</option>
+				<option>name</option>
+				<option>name</option>
+				<?php
+					//list school names from DB
+
+					$result = mysqli_query($connect, $getSchoolNames);
+
+				if(!$result) {
+					$error = "Query error: " . mysqli_error($connect);
+		
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					exit();
+				}
+		
+				$rowcount = mysqli_num_rows($result);
+				while ($row = mysqli_fetch_assoc($result)) {
+				//Set result variables
+				echo "<option>" . $row['school_name'] . "</option>";
+				}	
+	
+				
+				?>
+			</select><br />
 		</label>
 
 		<label for="altschoolcode"><b>Alt School Code:</b>

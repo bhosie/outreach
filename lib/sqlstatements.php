@@ -36,4 +36,8 @@ $getcalls = ("SELECT COUNT(contact_type)
 
 
 
+//get a list of school names for dropdown menu
+$getSchoolNames=("SELECT school_name FROM school;");
+
+
 ?>

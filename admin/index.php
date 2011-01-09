@@ -16,12 +16,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 ?>
 		
 	<div id="content">
-			<?php if($_SESSION['user_role'] != 'A'){
+			<?php 
+				//Verify user is an admin, otherwise throw error
+				if($_SESSION['user_role'] != 'A'){
+					$error =  "Access denied. You do not have sufficient privileges to view this page.";
 
-	echo "Access denied. You do not have sufficient privileges to view this page.";
-	exit();
-}else{echo "You are an admin";}		
-?>
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+					exit();
+				}	
+			?>
 
 		<form action="../lib/admincontroller.php" method="post" class="f-wrap-1">
 		

@@ -66,11 +66,10 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		
 				$rowcount = mysqli_num_rows($result);
 				while ($row = mysqli_fetch_assoc($result)) {
-				//Set result variables
+				//set each school name retrieved from DB as a selectable option in dropdown
 				echo "<option>" . $row['school_name'] . "</option>";
 				}	
 	
-				
 				?>
 			</select><br />
 		</label>

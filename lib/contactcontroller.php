@@ -54,8 +54,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 			//Check for valid school
 			//FIXME: Need to capture the district code from index and check against the DB.
-			$schoollookup = "SELECT dist_code, school_code FROM school
-							WHERE school_code = '{$_POST['schoolcode']}'";
+			$schoollookup = "SELECT dist_code, school_code, school_name FROM school
+							WHERE school_name = '{$_POST['schoolcode']}'";
 
 			$checkschool = mysqli_query($connect, $schoollookup);
 

@@ -48,13 +48,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				$zip = $row['zip'];
 				}	
 	
-				if($rowcount == 1){
-					//Set a flag for addevent.php that notifies the page that a search was submitted.
-					$searched = TRUE;
+				if($rowcount >= 1){
 					
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/addevent.php');
-
-				}else if($rowcount > 1){
 					echo "<div id = 'Content'>";
 					$availableEntries = $rowcount;
 
@@ -75,19 +70,19 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 							if($city == !null){echo $city . " ";}
 							if($state == !null){echo $state . " ";}
 							if($zip == !null){echo $zip . "<br />";}
-							echo "<a href=". "#" .">Select This Contact</a>";
+							echo "<form action='/outreach/event/addevent.php' method='post' >
+								
+								<input id='contact_id' name='contact_id' type='hidden' value='".$contact_id ."' />
+								<input type='submit' name='selectContact' value='Select' class='f-submit' />
+								<br />
+			
+							</form>";
 							echo "</p>";
 						$i++;//}
-					
-					//multipleEntries($rowcount);
-						if(/*contact was selected*/){
-							//set searched flag
-							$searched = TRUE;
-							include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/addevent.php');
-					
 					}
+					
 					echo "</div>";
-
+					
 				}else {
 					$error = "No Contacts Found";
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');

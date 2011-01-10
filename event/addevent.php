@@ -28,7 +28,7 @@ if(!isset($_SESSION)){
 	<p>
 	<?php
 				//Receive a search flag from SearchController.php
-				if(isset($searched)){
+				if(isset($_POST['contact_id'])){
 						if($firstname == !null){echo $firstname . " ";}
 						if($lastname == !null){echo $lastname . "<br />";}
 						if($email == !null){echo $email . "<br />";}
@@ -50,7 +50,7 @@ if(!isset($_SESSION)){
 		</p>
 			
 			
-<input name="contact-id" type="hidden" value="<?php print $contact_id; ?>"/>
+<input name="contact-id" type="hidden" value="<?php echo $_POST['contact_id']; ?>"/>
     <label for="date"><b><span class="req">*</span>Date</b>
 
 <input name="date" type="text" class="f-name" id="date" tabindex="" maxlength="10" /><br /><p>YYYY-MM-DD</p>

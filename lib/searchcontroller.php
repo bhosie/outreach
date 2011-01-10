@@ -72,8 +72,18 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 							if($zip == !null){echo $zip . "<br />";}
 							echo "<form action='/outreach/event/addevent.php' method='post' >
 								
-								<input id='contact_id' name='contact_id' type='hidden' value='".$contact_id ."' />
-								<input type='submit' name='selectContact' value='Select' class='f-submit' />
+								<input id='contact_id' name='contact_id' type='hidden' value='".$contact_id ."' />";
+							if($firstname == !null){echo "<input id='firstname' name='firstname' type='hidden' value='". $firstname ."' />";}
+							if($lastname == !null){echo "<input id='contact_id' name='lastname' type='hidden' value='".$lastname ."' />";}
+							if($email == !null){echo "<input id='email' name='email' type='hidden' value='".$email ."' />";}
+							if($phone == !null){echo "<input id='phone' name='phone' type='hidden' value='".$phone ."' />";}
+							if($title == !null){echo "<input id='title' name='title' type='hidden' value='".$title ."' />";}
+							if($school == !null){echo "<input id='school' name='school' type='hidden' value='".$school ."' />";}
+							if($address == !null){echo "<input id='address' name='address' type='hidden' value='".$address ."' />";}
+							if($city == !null){echo "<input id='city' name='city' type='hidden' value='".$city ."' />";}
+							if($state == !null){echo "<input id='state' name='state' type='hidden' value='".$state ."' />";}
+							if($zip == !null){echo "<input id='zip' name='zip' type='hidden' value='".$zip ."' />";}
+								echo "<input type='submit' name='selectContact' value='Select' class='f-submit' />
 								<br />
 			
 							</form>";

@@ -27,19 +27,19 @@ if(!isset($_SESSION)){
 			<h3>Add A New Event</h3>
 	<p>
 	<?php
-				//Receive a search flag from SearchController.php
-				if(isset($_POST['contact_id'])){
-						if($firstname == !null){echo $firstname . " ";}
-						if($lastname == !null){echo $lastname . "<br />";}
-						if($email == !null){echo $email . "<br />";}
-						if($phone == !null){echo $phone . "<br />";}
-						if($title == !null){echo $title . "<br />";}
-						if($school == !null){echo $school . "<br />";}
-						if($address == !null){echo $address . "<br />";}
-						if($city == !null){echo $city . " ";}
-						if($state == !null){echo $state . " ";}
-						if($zip == !null){echo $zip . "<br />";}
-						//echo "contact ID: " . $contact_id;
+				//Receive the values of the contact person that was selected in 
+				//SearchController.php and display them for the user.
+				if(isset($_POST['selectContact'])){
+						if($_POST['firstname'] == !null){echo $_POST['firstname'] . " ";}
+						if($_POST['lastname'] == !null){echo $_POST['lastname'] . "<br />";}
+						if($_POST['email'] == !null){echo $_POST['email'] . "<br />";}
+						if($_POST['phone'] == !null){echo $_POST['phone'] . "<br />";}
+						if($_POST['title'] == !null){echo $_POST['title'] . "<br />";}
+						if($_POST['school'] == !null){echo $_POST['school'] . "<br />";}
+						if($_POST['address'] == !null){echo $_POST['address'] . "<br />";}
+						if($_POST['city'] == !null){echo $_POST['city'] . " ";}
+						if($_POST['state'] == !null){echo $_POST['state'] . " ";}
+						if($_POST['zip'] == !null){echo $_POST['zip'] . "<br />";}
 
 				}else{
 					//Search Flag was not set!
@@ -51,6 +51,7 @@ if(!isset($_SESSION)){
 			
 			
 <input name="contact-id" type="hidden" value="<?php echo $_POST['contact_id']; ?>"/>
+<input name="user_id" type="hidden" value="<?php echo $_SESSION['user_ID']; ?>"/>
     <label for="date"><b><span class="req">*</span>Date</b>
 
 <input name="date" type="text" class="f-name" id="date" tabindex="" maxlength="10" /><br /><p>YYYY-MM-DD</p>
@@ -90,7 +91,7 @@ if(!isset($_SESSION)){
     <label for="notes"><b><span class="req">*</span>Notes:</b>
 			<textarea id="notes" name="notes" type="text" cols="40" rows="5" class="f-name" tabindex="2" /></textarea><br />
 	</label>
-
+	
     <hr/>
     <input type="submit" name="event" value="Add Event" class="f-submit" tabindex="10" />
     </form>

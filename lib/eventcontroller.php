@@ -34,7 +34,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 				exit();
 		
-			}else{
+			}
 			
 			
 			
@@ -92,7 +92,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 				exit();
 			}
-		}	
+			
 	}
 
 ?>

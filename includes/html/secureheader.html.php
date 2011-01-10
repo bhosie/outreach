@@ -6,17 +6,8 @@
 session_start();
 
 	
-	if (!isset($_SESSION['username'])) {
-		//header('Location: /outreach/login/');
-	}
-
-
-if(isset($_SESSION['user_ID'])){
-	echo 'Username: ' .$_SESSION['username'] . '<br />';
-	echo 'User ID: ' .$_SESSION['user_ID'] . '<br />';
-	echo 'User Role: ' . $_SESSION['user_role'];
-	}else{
-		echo "No Session";
+	if (!isset($_SESSION['user_ID'])) {
+		header('Location: /outreach/login/');
 	}
 
 //include html header file

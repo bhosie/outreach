@@ -8,6 +8,6 @@
 			<li><a href="http://operator.intocareers.org/">Operator Login</a></li>
 			<li><a href="https://www.utahfutures.org/materials/calendar.html">Training Calendar</a></li>
 			<li><a href="http://www.utahfutures.org/materials/transferguide.pdf TARGET='_blank'">School Transfer Guide</a></li>
-			<li><a href="http://www.uheaa.org/outreach/colorguide.html">Friday Dress Colors</a></li>
+			
 			</ul>
 		</div>

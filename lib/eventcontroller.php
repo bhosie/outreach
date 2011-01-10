@@ -19,22 +19,27 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		
 			$date = ($_POST['date']);
 			 					
-			if (empty($_POST['date']) || empty($_POST['notes']) || empty($POST['in_out'])){
-			$error = "Please enter all the * required information";
-			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-		}
-		else if (!preg_match ('/^[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}$/', $date)) {
+			if (empty($_POST['date']) || empty($_POST['notes']) || empty($_POST['in_out'])){
+
+				$error = "Please enter all the * required information";
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+				exit();
+
+			}
+			
+			if (!preg_match ('/^[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}$/', $date)) {
 			                  
 				$FormValid="False";
 				$error = "Wrong date format";
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-			
+				exit();
 		
-		}else{
+			}else{
 			
 			
 			
 			$newEvent = ("INSERT INTO details (
+					user_id,
 					contact_id,
 					contact_date,
 					contact_type,
@@ -42,6 +47,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 					in_out,
 					notes)
 					VALUES(
+					'{$_SESSION['user_ID']}',
 					'{$_POST['contact-id']}',
 					'{$_POST['date']}',
 					'{$_POST['inquiry']}',

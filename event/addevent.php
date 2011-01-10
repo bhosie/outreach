@@ -44,7 +44,6 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			?>
 			
 			
-<?php print $contact_id; ?>
 <input name="contact-id" type="hidden" value="<?php print $contact_id; ?>"/>
     <label for="date"><b><span class="req">*</span>Date</b>
 

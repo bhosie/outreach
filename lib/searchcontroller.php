@@ -55,11 +55,37 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/addevent.php');
 
 				}else if($rowcount > 1){
-					$error = "Multiple Contacts Found! Please Contact the Administrator.";
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-				}
+					echo "<div id = 'Content'>";
+					$availableEntries = $rowcount;
+
+
+					//FIXME: Attempt to convert this loop to a function later.
+					//function multipleEntries($availableEntries){
+						$i = 1;
+		
+						while($i <= $availableEntries){
+							echo "<p>";
+							if($firstname == !null){echo $firstname . " ";}
+							if($lastname == !null){echo $lastname . "<br />";}
+							if($email == !null){echo $email . "<br />";}
+							if($phone == !null){echo $phone . "<br />";}
+							if($title == !null){echo $title . "<br />";}
+							if($school == !null){echo $school . "<br />";}
+							if($address == !null){echo $address . "<br />";}
+							if($city == !null){echo $city . " ";}
+							if($state == !null){echo $state . " ";}
+							if($zip == !null){echo $zip . "<br />";}
+							echo "<a href=#>Select This Contact</a>";
+							echo "</p>";
+						$i++;//}
 					
-				else {
+					//multipleEntries($rowcount);
+					
+					
+					}
+					echo "</div>";
+
+				}else {
 					$error = "No Contacts Found";
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		

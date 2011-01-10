@@ -3,11 +3,15 @@
 //event/index.php
 //
 //
-//Require the header2 file which contains session_start()
-require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
+//Require the secure header file which contains session_start() if no session is present.
+//This is just error checking. This file should only be reached as an include from newevent/index.php.
+if(!isset($_SESSION)){
 
-//include sidebar content
-include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
+	require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
+	//include sidebar content
+	include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
+}
+
 
 ?>
 	
@@ -21,18 +25,19 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			<fieldset>
 
 			<h3>Add A New Event</h3>
+	<p>
 	<?php
 				//Receive a search flag from SearchController.php
 				if(isset($searched)){
-						if($firstname == !null){echo $firstname . "<br />";}
+						if($firstname == !null){echo $firstname . " ";}
 						if($lastname == !null){echo $lastname . "<br />";}
 						if($email == !null){echo $email . "<br />";}
 						if($phone == !null){echo $phone . "<br />";}
 						if($title == !null){echo $title . "<br />";}
 						if($school == !null){echo $school . "<br />";}
 						if($address == !null){echo $address . "<br />";}
-						if($city == !null){echo $city . "<br />";}
-						if($state == !null){echo $state . "<br />";}
+						if($city == !null){echo $city . " ";}
+						if($state == !null){echo $state . " ";}
 						if($zip == !null){echo $zip . "<br />";}
 						//echo "contact ID: " . $contact_id;
 
@@ -42,6 +47,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 					exit();
 				}
 			?>
+		</p>
 			
 			
 <input name="contact-id" type="hidden" value="<?php print $contact_id; ?>"/>

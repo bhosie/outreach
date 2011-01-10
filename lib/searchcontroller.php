@@ -49,7 +49,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				}	
 	
 				if($rowcount == 1){
-					//Set a flag for addevent.php that notifies the page the a search was submitted.
+					//Set a flag for addevent.php that notifies the page that a search was submitted.
 					$searched = TRUE;
 					
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/addevent.php');
@@ -75,12 +75,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 							if($city == !null){echo $city . " ";}
 							if($state == !null){echo $state . " ";}
 							if($zip == !null){echo $zip . "<br />";}
-							echo "<a href=#>Select This Contact</a>";
+							echo "<a href=". "#" .">Select This Contact</a>";
 							echo "</p>";
 						$i++;//}
 					
 					//multipleEntries($rowcount);
-					
+						if(/*contact was selected*/){
+							//set searched flag
+							$searched = TRUE;
+							include($_SERVER['DOCUMENT_ROOT'] . '/outreach/event/addevent.php');
 					
 					}
 					echo "</div>";

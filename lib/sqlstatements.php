@@ -17,7 +17,7 @@ $getcontact = ("SELECT contacts.contact_id, contacts.firstname, contacts.lastnam
     				WHERE school.school_code = contacts.school_code
 				AND district.dist_code = contacts.dist_code
 				AND contacts.dist_code = school.dist_code
-				AND contacts.lastname LIKE '{$_POST['searchcontact']}';");
+				AND contacts.lastname LIKE '{$_POST['searchcontact']}%';");
 }
 
 //Search the Directory

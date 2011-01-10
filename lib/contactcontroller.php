@@ -19,7 +19,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		
 		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||
 			empty($_POST['phone']) ||  empty($_POST['jobtitle']) ||
-			empty($_POST['schoolcode'])  ||  !is_numeric($_POST['phone'])){
+			empty($_POST['schoolname'])  ||  !is_numeric($_POST['phone'])){
 				$error = "Please enter all the * required information";
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 	
@@ -52,21 +52,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 					return false;
 					}
 
-			//Check for valid school
-			//FIXME: Need to capture the district code from index and check against the DB.
-			$schoollookup = "SELECT dist_code, school_code, school_name FROM school
-							WHERE school_name = '{$_POST['schoolcode']}'";
-
-			$checkschool = mysqli_query($connect, $schoollookup);
-
-			$rowcount = mysqli_num_rows($checkschool);
-	
-			if($rowcount < 1){
-				$error = "Invalid school";
-				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-				exit();
-
-			}
+			
 
 			//Check for valid email format
 			$email = ($_POST['emailaddress']);
@@ -77,44 +63,73 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 					$error = "Invalid email";
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					return false;
-					}
-				else {
+			
+				}else {
+					//Prepare to grab school data and insert new contact into DB
 					
-				$newContact = ("INSERT INTO contacts(
-						firstname,
-						lastname,
-						phone,
-						email,
-						title,
-						school_code,
-						alt_school_code,
-						lead)
-						VALUES(
-						'{$_POST['firstname']}',
-						'{$_POST['lastname']}',
-						'{$_POST['phone']}',
-						'{$_POST['emailaddress']}',
-						'{$_POST['jobtitle']}',
-						'{$_POST['schoolcode']}',
-						'{$_POST['altschoolcode']}',
-						'{$_POST['lead']}');");
+					if($_POST['schoolname'] == "none"){
+						//selected "None" - new contact is not associated with a school
+						//skip school lookup and continue with script
+						continue;
+					}else{
+						//FIXME: DO I NEED TO STORE THE DISTRICT CODE IN THE CONTACTS TABLE. FIND A WAY NOT TO
+						//Get the school data for the school selected  by the user
+						$schoollookup = "SELECT dist_code, school_code FROM school
+										WHERE school_name = '{$_POST['schoolname']}'";
 
-				$result = mysqli_query($connect, $newContact);
-				
-				
-				
-				
-			if(!$result) {
-					$error = "Query error: " . mysqli_error($connect);
-					echo $error;
-					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-					exit();
-				}else{
+						$result = mysqli_query($connect, $schoollookup);
 
-					//If addition was successful, display the results
-					$success = 
-					("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
-			  <tr>
+						$rowcount = mysqli_num_rows($result);
+
+						//Get school data from $checkschool
+						$rowcount = mysqli_num_rows($result);
+							while ($row = mysqli_fetch_assoc($result)) {
+								$schoolCode = $row['school_code'];
+								$distCode = $row['dist_code'];
+							}
+	
+						if($rowcount < 1){
+							$error = "Invalid school";
+							include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+							exit();
+
+						}
+		
+						$newContact = ("INSERT INTO contacts(
+										firstname,
+										lastname,
+										phone,
+										email,
+										title,
+										school_code,
+										dist_code,
+										lead)
+										VALUES(
+										'{$_POST['firstname']}',
+										'{$_POST['lastname']}',
+										'{$_POST['phone']}',
+										'{$_POST['emailaddress']}',
+										'{$_POST['jobtitle']}',
+										'$schoolCode',
+										'$distCode',
+										'{$_POST['lead']}');");
+
+						$result = mysqli_query($connect, $newContact);
+				
+
+
+				
+						if(!$result) {
+							$error = "Query error: " . mysqli_error($connect);
+							echo $error;
+							include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
+							exit();
+						}else{
+
+							//If addition was successful, display the results
+							$success = 
+							("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
+			  <t	r>
 				<th scope='row' align='left'>First Name:</th>
 				<td>{$_POST['firstname']}</td>
 			  </tr>
@@ -136,12 +151,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>School:</th>
-				<td>{$_POST['schoolcode']}</td>
+				<td>{$_POST['schoolname']}</td>
 			  </tr>
 			  <tr>
-				<th scope='row' align='left'>Alt School:</th>
-				<td>{$_POST['altschoolcode']}</td>
-			  </tr><tr>
 				<th scope='row' align='left'>Lead Counselor:</th>
 				<td>{$_POST['lead']}</td>
 			  </tr>
@@ -149,6 +161,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				
 				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');
 				}
+			}
 			}
 		}
 	}

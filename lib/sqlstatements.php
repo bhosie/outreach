@@ -13,8 +13,10 @@ $getcontact = ("SELECT contacts.contact_id, contacts.firstname, contacts.lastnam
 				contacts.email, contacts.phone, 
 				contacts.title, school.school_name, school.address, school.city,
 				school.state, school.zip
-				FROM school, contacts
+				FROM school, contacts, district
     				WHERE school.school_code = contacts.school_code
+				AND district.dist_code = contacts.dist_code
+				AND contacts.dist_code = school.dist_code
 				AND contacts.lastname LIKE '{$_POST['searchcontact']}';");
 }
 

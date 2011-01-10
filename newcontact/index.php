@@ -46,12 +46,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		    <input id="jobtitle" name="jobtitle" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 
-		<label for="schoolcode"><b><span class="req">*</span>School</b>
-		    <select id="schoolcode" name="schoolcode" tabindex="4">
+		<label for="schoolname"><b><span class="req">*</span>School</b>
+		    <select id="schoolname" name="schoolname" tabindex="4">
 				<option>Select...</option>
 				<option>none</option>
-				<option>name</option>
-				<option>name</option>
+				
 				<?php
 					//list school names from DB
 

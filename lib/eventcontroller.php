@@ -20,7 +20,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			$date = ($_POST['date']);
 			
 			//Verify all required fields are completed 					
-			if (empty($_POST['date']) || empty($_POST['notes']) || empty($_POST['in_out'])){
+			if (empty($_POST['date']) || empty($_POST['notes']) || ($_POST['inquiry'] == 'Select...')){
 
 				$error = "Please enter all the * required information";
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');

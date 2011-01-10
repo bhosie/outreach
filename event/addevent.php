@@ -57,7 +57,7 @@ if(!isset($_SESSION)){
 <input name="date" type="text" class="f-name" id="date" tabindex="" maxlength="10" /><br /><p>YYYY-MM-DD</p>
 		  </label>
 			
-			<label for="inquiry"><b>Inquiry Type:</b>
+			<label for="inquiry"><b><span class="req">*</span>Inquiry Type:</b>
 			<select id="inquiry" name="inquiry" tabindex="4">
 			<option>Select...</option>
 			<option>phone</option>
@@ -74,7 +74,7 @@ if(!isset($_SESSION)){
 
 	<fieldset class="f-radio-wrap">
 
-		<b><span class="req">*</span>Contact Type</b>
+		<b>Contact Type</b>
 
 			<fieldset>
 			    <label for="in">

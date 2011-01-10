@@ -48,7 +48,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/event/index.php'){echo " class='active'";} ?> ><a href="/outreach/event/">Events</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/newcontact/index.php'){echo " class='active'";} ?>><a href="/outreach/newcontact/">New Contact</a></li>
 		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/reports/index.php'){echo " class='active'";} ?>><a href="/outreach/reports/">Reports</a></li>
-		<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/directory/index.php'){echo " class='active'";} ?>><a href="/outreach/directory/">Directory</a></li>
+		<!--<li<?php if( $_SERVER['PHP_SELF'] == '/outreach/directory/index.php'){echo " class='active'";} ?>><a href="/outreach/directory/">Directory</a></li>-->
 		<?php
 			//Only display admin link if user is an admin.
 			if($sessionvar == 'A' && $_SERVER['PHP_SELF'] == '/outreach/admin/index.php'){

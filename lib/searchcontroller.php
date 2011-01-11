@@ -71,9 +71,18 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 							if($state == !null){echo $state . " ";}
 							if($zip == !null){echo $zip . "<br />";}
 
-							//Set up a hidden form so these values can be passed to event/addevent.php
-							echo "<form action='/outreach/event/addevent.php' method='post' >
-								<input id='contact_id' name='contact_id' type='hidden' value='".$contact_id ."' />";
+							//Set up a hidden form so these values can be passed to the correct page
+
+							//Check which form we came from
+							if(isset($_POST['change_contact'])){
+								//We came from changecontact/index.php
+								echo "<form action='/outreach/editcontact/edit.php' method='post' >";
+					
+							}else{
+							//otherwise we came from event/index.php
+							echo "<form action='/outreach/event/addevent.php' method='post' >";
+							}
+								echo "<input id='contact_id' name='contact_id' type='hidden' value='".$contact_id ."' />";
 								if($firstname == !null){echo "<input id='firstname' name='firstname' type='hidden' value='". $firstname ."' />";}
 								if($lastname == !null){echo "<input id='contact_id' name='lastname' type='hidden' value='".$lastname ."' />";}
 								if($email == !null){echo "<input id='email' name='email' type='hidden' value='".$email ."' />";}
@@ -91,7 +100,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 							</form>";
 							echo "</p>";
 					}
+					
 					echo "<p>...or <a href='/outreach/event/'>search for another person.</a></p>";
+	
 					echo "</div>";
 				
 				}else {

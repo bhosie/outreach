@@ -36,11 +36,14 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				$rowcount = mysqli_num_rows($result);
 				
 	
-				if($rowcount >= 1){ 
+				if($rowcount >= 1){ ?>
 					
-					echo "<div id='content'>";
-					
+					 <div id='content'>
 
+					<h1>Search Results</h1>
+					<h3>Please select from the choices below:</h3>
+					
+					<?php
 					while ($row = mysqli_fetch_assoc($result)) {
 							//Grab the values for each row in the database 
 							$contact_id = $row['contact_id'];
@@ -88,7 +91,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 							</form>";
 							echo "</p>";
 					}
-					
+					echo "<p>...or <a href='/outreach/event/'>search for another person.</a></p>";
 					echo "</div>";
 				
 				}else {

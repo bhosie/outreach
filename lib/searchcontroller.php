@@ -17,14 +17,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	
 	if(isset($_POST['searchcontact'])){
 		
+		//Check whether a search form was submitted
 		if(empty($_POST['searchcontact'])){
 			$error = "Please enter a Contact Person's Last Name.";
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
-		
+			exit();
 			}else{
 
 				$result = mysqli_query($connect, $getcontact);
-
+				//Throw error if DB connect fails
 				if(!$result) {
 					$error = "Query error: " . mysqli_error($connect);
 		
@@ -50,7 +51,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	
 				if($rowcount >= 1){ 
 					
-					echo "<div id='Content'>";
+					echo "<div id='content'>";
 					
 					$availableEntries = $rowcount;
 
@@ -93,7 +94,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 					}
 					
 					echo "</div>";
-					
+				
 				}else {
 					$error = "No Contacts Found";
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');

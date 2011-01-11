@@ -42,7 +42,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 					
 
 					while ($row = mysqli_fetch_assoc($result)) {
-							//Set result variables
+							//Grab the values for each row in the database 
 							$contact_id = $row['contact_id'];
      						$firstname = $row['firstname'];
 							$lastname = $row['lastname'];
@@ -68,7 +68,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 							if($state == !null){echo $state . " ";}
 							if($zip == !null){echo $zip . "<br />";}
 
-							//Set up a hidden for so these values can be passed to event/addevent.php
+							//Set up a hidden form so these values can be passed to event/addevent.php
 							echo "<form action='/outreach/event/addevent.php' method='post' >
 								<input id='contact_id' name='contact_id' type='hidden' value='".$contact_id ."' />";
 								if($firstname == !null){echo "<input id='firstname' name='firstname' type='hidden' value='". $firstname ."' />";}

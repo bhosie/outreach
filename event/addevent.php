@@ -30,16 +30,16 @@ if(!isset($_SESSION)){
 				//Receive the values of the contact person that was selected in 
 				//SearchController.php and display them for the user.
 				if(isset($_POST['selectContact'])){
-						if($_POST['firstname'] == !null){echo $_POST['firstname'] . " ";}
-						if($_POST['lastname'] == !null){echo $_POST['lastname'] . "<br />";}
-						if($_POST['email'] == !null){echo $_POST['email'] . "<br />";}
-						if($_POST['phone'] == !null){echo $_POST['phone'] . "<br />";}
-						if($_POST['title'] == !null){echo $_POST['title'] . "<br />";}
-						if($_POST['school'] == !null){echo $_POST['school'] . "<br />";}
-						if($_POST['address'] == !null){echo $_POST['address'] . "<br />";}
-						if($_POST['city'] == !null){echo $_POST['city'] . " ";}
-						if($_POST['state'] == !null){echo $_POST['state'] . " ";}
-						if($_POST['zip'] == !null){echo $_POST['zip'] . "<br />";}
+						if(!empty($_POST['firstname'])){echo $_POST['firstname'] . " ";}
+						if(!empty($_POST['lastname'])){echo $_POST['lastname'] . "<br />";}
+						if(!empty($_POST['email'])){echo $_POST['email'] . "<br />";}
+						if(!empty($_POST['phone'])){echo $_POST['phone'] . "<br />";}
+						if(!empty($_POST['title'])){echo $_POST['title'] . "<br />";}
+						if(!empty($_POST['school'])){echo $_POST['school'] . "<br />";}
+						if(!empty($_POST['address'])){echo $_POST['address'] . "<br />";}
+						if(!empty($_POST['city'])){echo $_POST['city'] . " ";}
+						if(!empty($_POST['state'])){echo $_POST['state'] . " ";}
+						if(!empty($_POST['zip'])){echo $_POST['zip'] . "<br />";}
 
 				}else{
 					//Search Flag was not set!

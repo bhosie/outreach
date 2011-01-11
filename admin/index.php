@@ -46,8 +46,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 		<input id="emailaddress" name="emailaddress" type="text" class="f-email" tabindex="3" /><br />
 		</label>
 			
-		<label for="enquiry"><b><span class="req">*</span>User Role:</b>
-		<select id="enquiry" name="role" tabindex="4">
+		<label for="inquiry"><b><span class="req">*</span>User Role:</b>
+		<select id="inquiry" name="role" tabindex="4">
 		<option>Select...</option>
 		<option>User</option>
 		<option>Manager</option>

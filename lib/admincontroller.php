@@ -20,11 +20,14 @@ if(isset($_POST['user'])){
 		//Check that all fields were filled out
 		if (empty($_POST['firstname']) ||  empty($_POST['lastname']) ||
 			empty($_POST['emailaddress']) ||  empty($_POST['role']) ||
-			empty($_POST['username']) ||  empty($_POST['password'])){
+			empty($_POST['username']) ||  empty($_POST['password']) || ($_POST['role'] == 'Select...')){
 
 					$error = "Please enter all the * required information";
 					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
+
+
+
 				
 		}
 
@@ -49,7 +52,7 @@ if(isset($_POST['user'])){
 		$rowcount = mysqli_num_rows($check);
 	
 		if($rowcount != 0){
-				$error = ("User not added! The USERNAME '{$_POST['username']}' is taken. 								Please enter a different USERNAME and try again.");
+				$error = ("User not added! The USERNAME '{$_POST['username']}' is taken. Please enter a different USERNAME and try again.");
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
 					

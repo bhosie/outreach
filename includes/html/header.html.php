@@ -70,6 +70,15 @@ http://creativecommons.org/licenses/GPL/2.0/
 			}
 		
 			//Only display these links if user is logged in.
+
+			//Edit Contact Link
+			if($loggedin == TRUE && $_SERVER['PHP_SELF'] == '/outreach/editcontact/index.php'){
+				echo "<li class='active'><a href='/outreach/editcontact/'>Edit Contact</a></li>";
+			}else if($loggedin == TRUE && $_SERVER['PHP_SELF'] != '/outreach/editcontact/index.php'){
+				echo "<li><a href='/outreach/editcontact/'>Edit Contact</a></li>";
+			}else{
+				//If the user is not logged in do not display link
+			}
 			//Change Password link
 			if($loggedin == TRUE && $_SERVER['PHP_SELF'] == '/outreach/password/index.php'){
 				echo "<li class='active'><a href='/outreach/password/'>Password</a></li>";

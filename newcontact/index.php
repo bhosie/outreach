@@ -73,9 +73,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			</select><br />
 		</label>
 
-		<label for="altschoolcode"><b>Alt School Code:</b>
+		<!--<label for="altschoolcode"><b>Alt School Code:</b>
 		    <input id="altschoolcode" name="altschoolcode" type="text" class="f-email" tabindex="3" /><br />
-		</label>
+		</label>-->
 			
 	<fieldset class="f-radio-wrap">
 		

@@ -60,10 +60,17 @@ if(!isset($_SESSION)){
 			<label for="inquiry"><b><span class="req">*</span>Inquiry Type:</b>
 			<select id="inquiry" name="inquiry" tabindex="4">
 			<option>Select...</option>
-			<option>phone</option>
-			<option>email</option>
+			<option>phone call- UtahFutures</option>
+			<option>phone call- other</option>
+			<option>email- UtahFutures</option>
+			<option>email- other</option>
 			<option>booth event</option>
-			<option>presentation</option>
+			<option>presentation- fin lit</option>
+			<option>presentation- FAFSA night</option>
+			<option>presentation- NT4CM</option>
+			<option>presentation- Scholarships/Financial Aid</option>
+			<option>presentation- UtahFutures (Students/Parents)</option>
+			<option>presentation- UtahFutures (Educators)</option>
 			</select>
 			<br />
 	</label>

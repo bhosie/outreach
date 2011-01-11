@@ -48,9 +48,10 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				$zip = $row['zip'];
 				}	
 	
-				if($rowcount >= 1){
+				if($rowcount >= 1){ 
 					
-					echo "<div id = 'Content'>";
+					echo "<div id='Content'>";
+					
 					$availableEntries = $rowcount;
 
 

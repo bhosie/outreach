@@ -17,7 +17,8 @@ $getcontact = ("SELECT contacts.contact_id, contacts.firstname, contacts.lastnam
     				WHERE school.school_code = contacts.school_code
 				AND district.dist_code = contacts.dist_code
 				AND contacts.dist_code = school.dist_code
-				AND contacts.lastname LIKE '%{$_POST['searchcontact']}%';");
+				AND contacts.lastname LIKE '%{$_POST['searchcontact']}%'
+				ORDER BY contacts.lastname;");
 }
 
 //Search the Directory
@@ -39,7 +40,7 @@ $getcalls = ("SELECT COUNT(contact_type)
 
 
 //get a list of school names for dropdown menu
-$getSchoolNames=("SELECT school_name FROM school;");
+$getSchoolNames=("SELECT school_name FROM school ORDER BY school_name;");
 
 
 ?>

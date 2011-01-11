@@ -69,11 +69,11 @@ if(!empty($_POST['title'])){
 		</label>
 
 		<label for="phone"><b><span class="req">*</span>Phone Number:</b>
-		    <input name="phone" type="text" class="f-email" id="phone" tabindex="3" maxlength="10" value="<?php echo $email; ?>"/><br />
+		    <input name="phone" type="text" class="f-email" id="phone" tabindex="3" maxlength="10" value="<?php echo $phone; ?>"/><br />
 		</label>
 		
 		<label for="emailaddress"><b><span class="req">*</span>Email Address:</b>
-		    <input id="emailaddress" name="emailaddress" type="text" class="f-email" tabindex="3" value="<?php echo $phone; ?>"/><br />
+		    <input id="emailaddress" name="emailaddress" type="text" class="f-email" tabindex="3" value="<?php echo $email; ?>"/><br />
 		</label>
 		
 		<label for="jobtitle"><b><span class="req">*</span>Job Title:</b>

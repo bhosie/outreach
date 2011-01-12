@@ -3,8 +3,8 @@
 //home/index.php
 //
 //
-require($_SERVER['DOCUMENT_ROOT'] .'/outreach/lib/db.inc.php');
-//Require the header2 file which contains session_start()
+
+//Require the secureheader file which contains session_start()
 require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.php');
 
 //include sidebar content

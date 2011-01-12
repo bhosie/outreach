@@ -122,7 +122,6 @@ if(isset($_POST['contact'])){
 				
 		if(!$result) {
 			$error = "Query error: " . mysqli_error($connect);
-			echo $error;
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 			exit();
 		}else{

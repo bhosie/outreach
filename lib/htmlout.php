@@ -3,7 +3,7 @@
 //Ensures proper html output
 //
 //
-//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
+
 	//passes &text through htmlspecialchars()
 	function html($text){
 		return htmlspecialchars($text, ENT_QUOTES, 'utf-8');

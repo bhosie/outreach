@@ -68,7 +68,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 				exit();
 			}
 
-
+			fuc
 			//Set variables for displaying details about newly added event
 			$success = 	
 			(" <table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>

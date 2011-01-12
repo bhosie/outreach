@@ -16,7 +16,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/db.inc.php');
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 		
 			}else{
-			echo "<br />SEARCH TERM: {$_POST['searchsite']}<br />";
+			echo "<br />SEARCH TERM:" . html($_POST['searchsite']) ."<br />";
 			
 			}
 	}

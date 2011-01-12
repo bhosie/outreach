@@ -18,6 +18,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 <?php
 	
 //set variables for form values below
+$contactID = $_POST['contact_id'];
+
 if(!empty($_POST['firstname'])){
 	$firstname = $_POST['firstname'];
 }else{
@@ -59,7 +61,7 @@ if(!empty($_POST['title'])){
     	<fieldset>
 			
 		<h3>Edit Contact Information:</h3>
-			<input id="contact_id" name="contact_id" type="hidden" value="<?php echo $_POST['contact_id']; ?>" />
+			<input id="contact_id" name="contact_id" type="hidden" value="<?php echo $contactID; ?>" />
 		<label for="firstname"><b><span class="req">*</span>First name:</b>
 		    <input id="firstname" name="firstname" type="text" class="f-name" tabindex="1" value="<?php echo $firstname; ?>"/><br />
 		</label>
@@ -100,7 +102,8 @@ if(!empty($_POST['title'])){
 				$rowcount = mysqli_num_rows($result);
 				while ($row = mysqli_fetch_assoc($result)) {
 				//set each school name retrieved from DB as a selectable option in dropdown
-				echo "<option>" . $row['school_name'] . "</option>";
+					$school = $row['school_name'];
+					echo "<option>" . html($school) . "</option>";
 				}	
 	
 				?>

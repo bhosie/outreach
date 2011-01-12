@@ -1,13 +1,8 @@
 <?php 
 //
-//This file is responsible for connecting to the database and include security "Helper" Files
+//This file is responsible for connecting to the database.
 //
 //
-
-//HELPER files for security
-require('htmlout.php');
-require('stripslashes.php');
-//require($_SERVER['DOCUMENT_ROOT'] . '/outreach/lib/nonavigation.php');
 
 //Set variables to connect to DB
 $username = 'outreach';

@@ -42,6 +42,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 
 		<?php
 			//Set $sessionvar to null if no session is present to avoid an error in the nav menu
+			//TODO: I'm not sure if i still need this. Revisit.
 			if(isset($_SESSION['user_role'])){
 				$sessionvar = $_SESSION['user_role'];
 				}else{

@@ -90,27 +90,27 @@ if(isset($_POST['user'])){
 				<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
 			  <tr>
 				<th scope='row' align='left'>First Name:</th>
-				<td>{$_POST['firstname']}</td>
+				<td>". html($_POST['firstname']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Last Name:</th>
-				<td>{$_POST['lastname']}</td>
+				<td>". html($_POST['lastname']) . "</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Email:</th>
-				<td>{$_POST['emailaddress']}</td>
+				<td>". html($_POST['emailaddress']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>User Role:</th>
-				<td>{$_POST['role']}</td>
+				<td>". html($_POST['role']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>UserName:</th>
-				<td>{$_POST['username']}</td>
+				<td>". html($_POST['username']) ."</td>
 			  </tr>
 			</table>");
 				
-				require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');	
+				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/success.html.php');	
 				exit();
 			}
 			}

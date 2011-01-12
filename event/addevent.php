@@ -30,20 +30,21 @@ if(!isset($_SESSION)){
 				//Receive the values of the contact person that was selected in 
 				//SearchController.php and display them for the user.
 				if(isset($_POST['selectContact'])){
-						if(!empty($_POST['firstname'])){echo $_POST['firstname'] . " ";}
-						if(!empty($_POST['lastname'])){echo $_POST['lastname'] . "<br />";}
-						if(!empty($_POST['email'])){echo $_POST['email'] . "<br />";}
-						if(!empty($_POST['phone'])){echo $_POST['phone'] . "<br />";}
-						if(!empty($_POST['title'])){echo $_POST['title'] . "<br />";}
-						if(!empty($_POST['school'])){echo $_POST['school'] . "<br />";}
-						if(!empty($_POST['address'])){echo $_POST['address'] . "<br />";}
-						if(!empty($_POST['city'])){echo $_POST['city'] . " ";}
-						if(!empty($_POST['state'])){echo $_POST['state'] . " ";}
-						if(!empty($_POST['zip'])){echo $_POST['zip'] . "<br />";}
+						if(!empty($_POST['firstname'])){echo html($_POST['firstname']) . " ";}
+						if(!empty($_POST['lastname'])){echo html($_POST['lastname']) . "<br />";}
+						if(!empty($_POST['email'])){echo html($_POST['email']) . "<br />";}
+						if(!empty($_POST['phone'])){echo html($_POST['phone']) . "<br />";}
+						if(!empty($_POST['title'])){echo html($_POST['title']) . "<br />";}
+						if(!empty($_POST['school'])){echo html($_POST['school']) . "<br />";}
+						if(!empty($_POST['address'])){echo html($_POST['address']) . "<br />";}
+						if(!empty($_POST['city'])){echo html($_POST['city']) . " ";}
+						if(!empty($_POST['state'])){echo html($_POST['state']) . " ";}
+						if(!empty($_POST['zip'])){echo html($_POST['zip']) . "<br />";}
 
 				}else{
 					//Search Flag was not set!
-					echo "You did not search for anyone.<br /><br />";
+					$error = "You did not search for anyone.";
+					include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 					exit();
 				}
 			?>

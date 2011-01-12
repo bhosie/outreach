@@ -32,7 +32,6 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			//verify email matches valid criteria
 			if (!preg_match ('/^[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}$/', $date)) {
 			                  
-				$FormValid="False";
 				$error = "Wrong date format";
 				include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 				exit();
@@ -74,23 +73,23 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			(" <table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
 			  <tr>
 				<th scope='row' align='left'>Date:</th>
-				<td>{$_POST['date']}</td>
+				<td>". html($_POST['date']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Inquiry:</th>
-				<td>{$_POST['inquiry']}</td>
+				<td>". html($_POST['inquiry']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Attended:</th>
-				<td>{$_POST['attendance']}</td>
+				<td>". html($_POST['attendance']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Contact Type:</th>
-				<td>{$_POST['in_out']}</td>
+				<td>". html($_POST['in_out']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Notes:</th>
-				<td>{$_POST['notes']}</td>
+				<td>". html($_POST['notes']) ."</td>
 			  </tr>
 			</table>");
 			

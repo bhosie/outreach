@@ -13,7 +13,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/secureheader.html.p
 //include sidebar content
 include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
-
+	//Receive hidden flag/form-post from search controller
 	if(isset($_POST['change'])){
 		
 		
@@ -44,9 +44,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 	$rowcount = mysqli_num_rows($result);
 
 	while ($row = mysqli_fetch_assoc($result)) {
-     $userrole = $row['password'];
+     	$userrole = $row['password'];
 	 
-}	
+	}	
 	
 	if(!$rowcount == 1){
 		$error = "The password you entered does not match your current password. Please try again.";

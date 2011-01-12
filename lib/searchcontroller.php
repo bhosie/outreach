@@ -22,6 +22,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 			$error = "Please enter a Contact Person's Last Name.";
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 			exit();
+
 			}else{
 
 				$result = mysqli_query($connect, $getcontact);
@@ -60,16 +61,16 @@ include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/sidebar.html.php');
 
 							echo "<p>";
 							//Display all available results to users
-							if($firstname == !null){echo $firstname . " ";}
-							if($lastname == !null){echo $lastname . "<br />";}
-							if($email == !null){echo $email . "<br />";}
-							if($phone == !null){echo $phone . "<br />";}
-							if($title == !null){echo $title . "<br />";}
-							if($school == !null){echo $school . "<br />";}
-							if($address == !null){echo $address . "<br />";}
-							if($city == !null){echo $city . " ";}
-							if($state == !null){echo $state . " ";}
-							if($zip == !null){echo $zip . "<br />";}
+							if($firstname == !null){echo html($firstname) . " ";}
+							if($lastname == !null){echo html($lastname) . "<br />";}
+							if($email == !null){echo html($email) . "<br />";}
+							if($phone == !null){echo html($phone) . "<br />";}
+							if($title == !null){echo html($title) . "<br />";}
+							if($school == !null){echo html($school) . "<br />";}
+							if($address == !null){echo html($address) . "<br />";}
+							if($city == !null){echo html($city) . " ";}
+							if($state == !null){echo html($state) . " ";}
+							if($zip == !null){echo html($zip) . "<br />";}
 
 							//Set up a hidden form so these values can be passed to the correct page
 

@@ -4,6 +4,10 @@
 //
 //This file is responsible for handling the form data from directory/index.php where a user searches for a contact
 //
+/******************************************************************************************
+//TODO: This will need extensive work before implementation, including the html() function
+*******************************************************************************************/
+
 require('sqlstatements.php');
 require('db.inc.php');
 

@@ -96,9 +96,9 @@ if(isset($_POST['contact'])){
 				
 		if(!$result) {
 			$error = "Query error: " . mysqli_error($connect);
-			echo $error;
 			include($_SERVER['DOCUMENT_ROOT'] . '/outreach/includes/html/error.html.php');
 			exit();
+
 		}else{
 
 			//If addition was successful, display the results
@@ -106,31 +106,31 @@ if(isset($_POST['contact'])){
 			("<table width='200' border='0' cellspacing='0' cellpadding='0' align='left'>
 			  <t	r>
 				<th scope='row' align='left'>First Name:</th>
-				<td>{$_POST['firstname']}</td>
+				<td>". html($_POST['firstname']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Last Name:</th>
-				<td>{$_POST['lastname']}</td>
+				<td>". html($_POST['lastname']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Phone:</th>
-				<td>{$_POST['phone']}</td>
+				<td>". html($_POST['phone']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Email:</th>
-				<td>{$_POST['emailaddress']}</td>
+				<td>". html($_POST['emailaddress']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Title:</th>
-				<td>{$_POST['jobtitle']}</td>
+				<td>". html($_POST['jobtitle']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>School:</th>
-				<td>{$_POST['schoolname']}</td>
+				<td>". html($_POST['schoolname']) ."</td>
 			  </tr>
 			  <tr>
 				<th scope='row' align='left'>Lead Counselor:</th>
-				<td>{$_POST['lead']}</td>
+				<td>". html($_POST['lead']) ."</td>
 			  </tr>
 			</table");
 				
